@@ -9,11 +9,11 @@ class Activities extends React.Component {
     }
   }
 
-
   render () {
     return (
       <div>
         activities
+        <div id="mapid"></div>
       </div>
     );
   }
