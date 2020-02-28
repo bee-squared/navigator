@@ -1,7 +1,5 @@
 const express = require('express');
 const router = express.Router();
-const qQueries = require('../database/queries/questions/questions.js');
-const aQueries = require('../database/queries/answers/answers.js');
 
 /* --------------------- Get --------------------- */
 // activities
