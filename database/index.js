@@ -2,13 +2,13 @@ const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/navigator', {useNewUrlParser: true, useUnifiedTopology: true });
 
 const db = mongoose.connection;
+
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {
   console.log(`Connected to the '${db.name}' DB on port ${db.port}`);
 });
 
 const activitySchema = new mongoose.Schema({
-  id: Number,
   title: String,
   description: String,
   date: Date,
@@ -22,8 +22,7 @@ const activitySchema = new mongoose.Schema({
 })
 
 const activityModel = mongoose.model('activity', activitySchema);
-const test = "test";
 
 module.exports = {
-  activityModel, test
+  activityModel,
 }
