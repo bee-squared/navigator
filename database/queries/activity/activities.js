@@ -2,7 +2,7 @@ const db = require('../../index.js');
 
 const getAllActivities = function() {
   try {
-    return db.find({});
+    return db.activityModel.find({});
   }
   catch(e) {
     return 400;
