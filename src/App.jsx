@@ -5,8 +5,8 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import Activities from './components/activities';
-import Profile from './components/profile';
+import ActivityStream from './components/activity/activity-stream';
+import Profile from './components/profile/profile';
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         </header>
         <Switch>
           <Route exact path='/'>
-            <Activities />
+            <ActivityStream/>
           </Route>
           <Route exact path='/profile'>
             <Profile />
