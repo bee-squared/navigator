@@ -4,7 +4,7 @@ const router = express.Router();
 /* --------------------- Get --------------------- */
 // activities
 router.getAllActivities('/activities', function (req, res) {
-  
+  res.send()
     // .then((results) => res.status(200).send(results))
 })
 

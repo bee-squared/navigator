@@ -19,7 +19,7 @@ function App() {
           <Route exact path='/'>
             <ActivityStream/>
           </Route>
-          <Route exact path='/profile'>
+          <Route path='/profile'>
             <Profile />
           </Route>
         </Switch>
