@@ -1,12 +1,15 @@
 import React from 'react';
-import activityList from '../../example-data/activities';
 
 class ActivityStream extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activityList: activityList,
+      activityList: [],
     }
+  }
+
+  componentDidMount() {
+    
   }
 
   render () {
