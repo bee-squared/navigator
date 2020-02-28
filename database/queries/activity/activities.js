@@ -1,14 +1,23 @@
 const db = require('../../index.js');
 
 const getAllActivities = function() {
-  db.find({});
+  try {
+    return db.find({});
+  }
+  catch(e) {
+    return 400;
+  }
 }
 
 const addActivity = function(activity) {
-  console.log(db.activityModel)
-  const a1 = new db.activityModel(activity);
-  a1.save();
-  // console.log("this should print an activity");
+  const newActivity = new db.activityModel(activity);
+  try {
+    return newActivity.save()
+    .then(() => 201);
+  }
+  catch(e) {
+    return 400;
+  }
 }
 
 module.exports = {

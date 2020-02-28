@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^7.2.1",
     "cors": "^2.8.5",
     "mongoose": "^5.9.2",
+    "mongoose-auto-increment": "^5.0.1",
     "node-sass": "^4.13.1",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",

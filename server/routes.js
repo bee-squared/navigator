@@ -17,7 +17,7 @@ router.get('/activity', function (req, res) {
 /* --------------------- Add --------------------- */
 router.post('/addActivity', (req, res) => {
   activity.addActivity(req.body)
-    // .then((results) => res.status(200).send(results))
+    .then((results) => res.sendStatus(results));
 })
 
 /* --------------------- Delete --------------------- */
