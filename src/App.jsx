@@ -6,6 +6,8 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import Activities from './components/activities';
+import Profile from './components/profile';
 
 function App() {
   return (
@@ -14,6 +16,14 @@ function App() {
         <header className="App-header">
           <div>This is the Navigator App</div>
         </header>
+        <Switch>
+          <Route exact path='/'>
+            <Activities />
+          </Route>
+          <Route exact path='/profile'>
+            <Profile />
+          </Route>
+        </Switch>
       </div>
     </Router>
   );
