@@ -3,26 +3,26 @@ const router = express.Router();
 
 /* --------------------- Get --------------------- */
 // activities
-router.getAllActivities('/activities', function (req, res) {
-  res.send()
+router.get('/activities', function (req, res) {
+  res.send("route is working");
     // .then((results) => res.status(200).send(results))
 })
 
-router.getActivity('/activity', function (req, res) {
-
+router.get('/activity', function (req, res) {
+  res.send("route is working");
     // .then((results) => res.status(200).send(results))
 })
 
 /* --------------------- Add --------------------- */
-router.addActivity('/addActivity', function (req, res) {
-
+router.post('/addActivity', function (req, res) {
+  res.send("route is working");
     // .then((results) => res.status(200).send(results))
 })
 
 /* --------------------- Delete --------------------- */
-router.getActivity('/deleteActivity', function (req, res) {
-
-    // .then((results) => res.status(200).send(results))
-})
+// router.getActivity('/deleteActivity', function (req, res) {
+//   res.send("route is working");
+//     // .then((results) => res.status(200).send(results))
+// })
 
 module.exports = router;
