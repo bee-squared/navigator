@@ -11,14 +11,15 @@ db.once('open', function() {
 const activitySchema = new mongoose.Schema({
   title: String,
   description: String,
-  date: Date,
+  date: {type: Date},
   sport: String,
   duration_hours: Number,
   duration_minutes: Number,
   distance: Number,
   elevation: Number,
   location: String,
-  rating: Number
+  rating: Number,
+  photo: String,
 })
 
 const activityModel = mongoose.model('activity', activitySchema);

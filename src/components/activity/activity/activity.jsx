@@ -13,6 +13,11 @@ class Activity extends React.Component {
     const { activity } = this.props;
     return (
       <div className="activityContainer">
+        <div className="activityHeaderContainer">
+          <div className="activityDate">
+            activity.
+          </div>
+        </div>
         <div className="activityDetails">
           { activity._id }
         </div>

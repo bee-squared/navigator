@@ -24,6 +24,7 @@ function App() {
             <Profile />
           </Route>
         </Switch>
+        <footer></footer>
       </div>
     </Router>
   );

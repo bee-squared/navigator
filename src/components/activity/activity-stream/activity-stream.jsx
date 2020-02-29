@@ -34,7 +34,6 @@ class ActivityStream extends React.Component {
         <aside className="asideRight">
           right
         </aside>
-        <footer></footer>
       </div>
     );
   }
