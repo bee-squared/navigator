@@ -1,5 +1,5 @@
 import React from 'react';
-import Activity from '../activity/activity'
+import Activity from '../activity/activity';
 
 class ActivityStream extends React.Component {
   constructor(props) {
@@ -17,14 +17,18 @@ class ActivityStream extends React.Component {
 
   render () {
     const { activityList } = this.state;
+
     return (
       <div className="activityStreamContainer">
-        activities
-        <div className="activityStreamContainer">
-          {activityList ? activityList.map((activity) => {
-            return <Activity activity={activity} key={`a${activity._id}`} />
-          }) : null }
-        </div>
+        <aside>activities</aside>
+        <section>
+          <div className="activityStreamContainer">
+            {activityList ? activityList.map((activity) => {
+              return <Activity activity={activity} key={`a${activity._id}`} />
+            }) : null }
+          </div>
+        </section>
+        <footer></footer>
       </div>
     );
   }

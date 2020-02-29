@@ -5,6 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
+import Navbar from './components/navbar/navbar';
 import ActivityStream from './components/activity/activity-stream/activity-stream';
 import Profile from './components/profile/profile';
 
@@ -13,7 +14,9 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <div>This is the Navigator App</div>
+        <header>
+          <Navbar />
+        </header>
         </header>
         <Switch>
           <Route exact path='/'>
