@@ -1,4 +1,4 @@
-import React from 'react';
+  import React from 'react';
 import PropTypes from 'prop-types';
 
 class Profile extends React.Component {
@@ -16,5 +16,9 @@ class Profile extends React.Component {
     )
   }
 }
+
+Profile.propTypes = {
+  
+};
 
 export default Profile;
