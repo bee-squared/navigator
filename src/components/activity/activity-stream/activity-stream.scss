@@ -1,0 +1,25 @@
+.activityStreamContainer {
+  display: flex;
+  flex-flow: row wrap;
+  border: 1px solid black;
+}
+
+.asideLeft {
+  display: inline-block;
+  border: 1px solid black;
+  margin-left: 10px;
+  width: 24vw,
+}
+
+.mainSection{
+  display: inline-block;
+  border: 1px solid black;
+  width: 50vw,
+}
+
+.asideRight {
+  display: inline-block;
+  border: 1px solid black;
+  margin-right: 10px;
+  width: 24vw,
+}

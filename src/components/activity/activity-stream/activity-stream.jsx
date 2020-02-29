@@ -1,5 +1,6 @@
 import React from 'react';
 import Activity from '../activity/activity';
+import './activity-stream.scss';
 
 class ActivityStream extends React.Component {
   constructor(props) {
@@ -20,14 +21,19 @@ class ActivityStream extends React.Component {
 
     return (
       <div className="activityStreamContainer">
-        <aside>activities</aside>
-        <section>
+        <aside className="asideLeft">
+          left
+        </aside>
+        <section className="mainSection">
           <div className="activityStreamContainer">
             {activityList ? activityList.map((activity) => {
               return <Activity activity={activity} key={`a${activity._id}`} />
             }) : null }
           </div>
         </section>
+        <aside className="asideRight">
+          right
+        </aside>
         <footer></footer>
       </div>
     );

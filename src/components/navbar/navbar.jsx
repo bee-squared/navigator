@@ -13,6 +13,7 @@ const useStyles = makeStyles(theme => ({
   root: {
     flexGrow: 1,
     borderBottom: '4px groove rgb(51, 173, 255)',
+    width: '100vw',
   },
   app: {
     background: 'lightgrey',
