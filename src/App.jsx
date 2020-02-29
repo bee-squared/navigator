@@ -5,7 +5,7 @@ import {
   Switch,
   Route,
 } from "react-router-dom";
-import ActivityStream from './components/activity/activity-stream';
+import ActivityStream from './components/activity/activity-stream/activity-stream';
 import Profile from './components/profile/profile';
 
 function App() {
