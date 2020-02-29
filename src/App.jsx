@@ -14,9 +14,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-        <header>
           <Navbar />
-        </header>
         </header>
         <Switch>
           <Route exact path='/'>

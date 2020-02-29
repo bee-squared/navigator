@@ -10,7 +10,7 @@ class Profile extends React.Component {
   }
   render() {
     return(
-      <div>
+      <div className="profileContainer">
         This is the profile page
       </div>
     )
@@ -18,7 +18,7 @@ class Profile extends React.Component {
 }
 
 Profile.propTypes = {
-  
+
 };
 
 export default Profile;
