@@ -25,7 +25,7 @@ class ActivityStream extends React.Component {
           left
         </aside>
         <section className="mainSection">
-          <div className="activityStreamContainer">
+          <div className="activityStream">
             {activityList ? activityList.map((activity) => {
               return <Activity activity={activity} key={`a${activity._id}`} />
             }) : null }

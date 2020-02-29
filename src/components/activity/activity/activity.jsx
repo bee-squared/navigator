@@ -1,5 +1,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
+import Moment from 'moment';
+import './activity.scss';
+
 
 class Activity extends React.Component {
   constructor(props) {
@@ -15,11 +18,17 @@ class Activity extends React.Component {
       <div className="activityContainer">
         <div className="activityHeaderContainer">
           <div className="activityDate">
-            activity.
+            { Moment(activity.date).format('MMMM Do YYYY') }
+          </div>
+          <div className="activityOptions">
+
           </div>
         </div>
-        <div className="activityDetails">
-          { activity._id }
+        <div className="activityTitle">
+          {activity.title}
+        </div>
+        <div className="activityDescription">
+          {activity.description}
         </div>
       </div>
     );
