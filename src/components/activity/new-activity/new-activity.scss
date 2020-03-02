@@ -17,22 +17,25 @@
 }
 
 .inputHeader {
-  display: block;
+  margin-bottom: 5px;
 }
 
 .textInput {
-  width: 100%;
+  width: 99%;
   margin-bottom: 30px;
   height: 2em;
 }
 
-.sportDateContainer {
+.inputBlockContainer {
   display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  border: 1px solid black;
 }
 
 .sportContainer {
   width: 50%;
-  padding-right: 20px;
+  margin-right: 20px;
 }
 
 .dateContainer {
@@ -45,6 +48,39 @@
 
 .dateInput {
   height: 2em;
-  width: 100%;
+  width: 99%;
 }
 
+.durationContainer {
+  width: 33.3%;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.durationHoursMinutesContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#durationHours {
+  display: inline-block;
+  width: 99%;
+  margin-right: 5px;
+}
+
+#durationMinutes {
+  display: inline-block;
+  width: 99%;
+  margin-left: 5px;
+}
+
+.distanceContainer {
+  width: 33.3%;
+  margin-right: 20px;
+  border: 1px solid black;
+}
+
+.elevationContainer {
+  width: 33.4%;
+  margin-right: 1px solid black;
+}

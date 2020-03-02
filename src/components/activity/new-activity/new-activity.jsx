@@ -19,7 +19,7 @@ class NewActivity extends React.Component {
           <form>
             <div className="inputHeader">Title</div>
             <input className="textInput" type="text" name="title"/>
-            <div className="sportDateContainer">
+            <div className="inputBlockContainer">
               <div className="sportContainer">
                 <div className="activityInputTitle">Sport</div>
                   <select id="sport" class="DropDownInput" name="sport">
@@ -34,6 +34,23 @@ class NewActivity extends React.Component {
               <div className="dateContainer">
                 <div className="inputHeader">Date</div>
                 <input className="dateInput" type="date" name="date"/>
+              </div>
+            </div>
+            <div className="inputBlockContainer">
+              <div className="durationContainer">
+                <div className="inputHeader">Duration</div>
+                <div className="durationHoursMinutesContainer">
+                  <input id="durationHours" className="textInput" type="text" name="durationHours" placeholder="Hours"/>
+                  <input id="durationMinutes" className="textInput" type="text" name="durationMinutes" placeholder="Minutes"/>
+                </div>
+              </div>
+              <div className="distanceContainer">
+                <div className="inputHeader">Distance</div>
+                <input className="textInput" type="text" name="distance" placeholder="Distance in miles"/>
+              </div>
+              <div className="elevationContainer">
+                <div className="inputHeader">Elevation</div>
+                <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles"/>
               </div>
             </div>
           </form>
