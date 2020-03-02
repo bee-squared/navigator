@@ -1,8 +1,6 @@
 import React from 'react';
 import './new-activity.scss';
-import Button from '@material-ui/core/Button';
-import { withStyles } from '@material-ui/core/styles';
-
+import ConfirmButton from '../../styled-components/confirm-button/confirm-button';
 
 class NewActivity extends React.Component {
   constructor(props) {
@@ -13,12 +11,6 @@ class NewActivity extends React.Component {
   }
 
   render () {
-
-    const style = {
-      color: '#ffffff',
-      backgroundColor: '#336699',
-    };
-
     return (
 
       <div className="newActivityContainer">
@@ -76,7 +68,7 @@ class NewActivity extends React.Component {
             </select>
           </form>
           <div className="buttonContainer">
-            <Button style={style} variant="text">Add Activity</Button>
+            <ConfirmButton name={'Create'}/>
             <button type="text" className="cancelButton">Cancel</button>
           </div>
         </div>

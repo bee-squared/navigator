@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     width: '100vw',
   },
   app: {
-    background: 'lightgrey',
+    background: '#C0C0C5',
     color: '#336699',
     height: 75,
   },
@@ -47,6 +47,9 @@ const useStyles = makeStyles(theme => ({
       boxShadow: 'none',
       opacity: .8,
       color: '#ffffff',
+    },
+    '&:focus': {
+      boxShadow: '0 0 0 0.2rem rgba(51,102,153,.5)',
     },
     justifyConent: 'flex-end',
   },

@@ -100,7 +100,12 @@
   width: 48%;
 }
 
+.buttonContainer {
+  display: flex;
+}
+
 .cancelButton {
+  display: inline-block;
   margin-left: 15px;
   border: none;
   text-decoration: none;
@@ -110,6 +115,10 @@
 
 .cancelButton:hover {
   cursor: pointer;
-  color: lightgray;
+  color: #c0c0c5;
   font-weight: bolder;
+}
+
+.cancelButton:active {
+  color: #336699;
 }
