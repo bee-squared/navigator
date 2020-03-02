@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
 import Navbar from './components/navbar/navbar';
 import ActivityStream from './components/activity/activity-stream/activity-stream';
@@ -18,7 +19,7 @@ function App() {
         </header>
         <Switch>
           <Route exact path='/'>
-            <ActivityStream/>
+            <Redirect to='/dashboard'/>
           </Route>
           <Route exact path='/dashboard'>
             <ActivityStream/>

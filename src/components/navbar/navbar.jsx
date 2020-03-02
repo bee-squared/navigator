@@ -33,6 +33,17 @@ const useStyles = makeStyles(theme => ({
     ],
     align: 'auto',
   },
+  addButton: {
+    color: '#ffffff',
+    backgroundColor: '#336699',
+    '&:hover': {
+      backgroundColor: '#336699',
+      borderColor: '#0062cc',
+      boxShadow: 'none',
+      opacity: .8,
+      color: '#ffffff',
+    },
+  },
 }));
 
 function Navbar() {
@@ -48,7 +59,7 @@ function Navbar() {
           <Typography variant="h3" className={classes.title} >
             Navigator
           </Typography>
-          {/* <Button color="inherit">Login</Button> */}
+          <Button className={classes.addButton}>Add Activity</Button>
         </Toolbar>
       </AppBar>
     </div>
