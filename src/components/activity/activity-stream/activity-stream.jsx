@@ -11,7 +11,7 @@ class ActivityStream extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/getAllActivities `)
+    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/getAllActivities`)
       .then((results) => results.json())
       .then((activityList) => this.setState({ activityList }));
   }

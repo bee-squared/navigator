@@ -26,12 +26,19 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1,
-    paddingTop: 10,
+    paddingTop: 20,
     fontFamily: [
       'fantasy',
       'sans-serif',
     ],
     align: 'auto',
+    '&:hover': {
+      cursor: 'pointer',
+    },
+    fontSize: '2.6em' ,
+    color: '#336699',
+    textDecoration  : 'none',
+    border: '1px black',
   },
   addButton: {
     color: '#ffffff',
@@ -43,6 +50,7 @@ const useStyles = makeStyles(theme => ({
       opacity: .8,
       color: '#ffffff',
     },
+    justifyConent: 'flex-end',
   },
 }));
 
@@ -51,7 +59,7 @@ function Navbar(props) {
 
   function handleClick(e) {
     e.preventDefault();
-    window.location = "/activity/new";
+    window.location = `/activity/new`;
   }
 
   return (
@@ -61,10 +69,12 @@ function Navbar(props) {
           <IconButton edge="start" className={classes.menuButton} aria-label="menu">
             <MenuIcon />
           </IconButton>
-          <Typography variant="h3" className={classes.title} >
-            Navigator
-          </Typography>
-          <Button className={classes.addButton} onClick={handleClick}>Add Activity</Button>
+          <div>
+            <a className="homeLink" href="/">Navigator</a>
+          </div>
+          <div className="toolbarButton">
+            <Button className={classes.addButton} onClick={handleClick}>Add Activity</Button>
+          </div>
         </Toolbar>
       </AppBar>
     </div>

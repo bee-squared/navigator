@@ -1,0 +1,19 @@
+.homeLink {
+  flex-grow: 1;
+  padding-top: 10px;
+  font-family: fantasy, sans-serif;
+  font-size: 2.8em;
+  color: #336699;
+  text-decoration: none;
+  display: block;
+}
+
+.homeLink:hover {
+  cursor: pointer;
+}
+
+.toolbarButton {
+  display: flex;
+  flex-grow: 1;
+  justify-content: flex-end;
+}

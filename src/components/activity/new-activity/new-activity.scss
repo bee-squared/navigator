@@ -1,7 +1,50 @@
 .newActivityContainer {
-  display: flex;
-  flex-flow: row wrap;
   justify-content: center;
-  margin: 25px;
-  background-color: white;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50vw;
 }
+
+.newActivityPageHeader {
+  color: white;
+  font-size: 2.0em;
+  margin-bottom: 20px;
+}
+
+.newActivityBody {
+  background-color: white;
+  padding: 20px;
+}
+
+.inputHeader {
+  display: block;
+}
+
+.textInput {
+  width: 100%;
+  margin-bottom: 30px;
+  height: 2em;
+}
+
+.sportDateContainer {
+  display: flex;
+}
+
+.sportContainer {
+  width: 50%;
+  padding-right: 20px;
+}
+
+.dateContainer {
+  width: 50%;
+}
+
+.DropDownInput {
+  width: 100%;
+}
+
+.dateInput {
+  height: 2em;
+  width: 100%;
+}
+
