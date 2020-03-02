@@ -46,8 +46,13 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function Navbar() {
+function Navbar(props) {
   const classes = useStyles();
+
+  function handleClick(e) {
+    e.preventDefault();
+    window.location = "/activity/new";
+  }
 
   return (
     <div className={classes.root}>
@@ -59,7 +64,7 @@ function Navbar() {
           <Typography variant="h3" className={classes.title} >
             Navigator
           </Typography>
-          <Button className={classes.addButton}>Add Activity</Button>
+          <Button className={classes.addButton} onClick={handleClick}>Add Activity</Button>
         </Toolbar>
       </AppBar>
     </div>

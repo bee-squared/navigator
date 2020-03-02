@@ -9,6 +9,7 @@ import {
 import Navbar from './components/navbar/navbar';
 import ActivityStream from './components/activity/activity-stream/activity-stream';
 import Profile from './components/profile/profile';
+import NewActivity from './components/activity/new-activity/new-activity';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           </Route>
           <Route path='/profile'>
             <Profile />
+          </Route>
+          <Route path='/activity/new'>
+            <NewActivity />
           </Route>
         </Switch>
         <footer></footer>
