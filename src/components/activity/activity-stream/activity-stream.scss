@@ -8,8 +8,8 @@
 .asideLeft {
   display: inline-block;
   border: 1px solid black;
-  // margin-left: 10px;
-  width: 28vw,
+  width: 28vw;
+  padding: 10px;
 }
 
 .mainSection{
@@ -21,7 +21,8 @@
 .asideRight {
   display: inline-block;
   border: 1px solid black;
-  width: 28vw,
+  width: 28vw;
+  padding: 10px;
 }
 
 .activityStream {

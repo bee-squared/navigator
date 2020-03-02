@@ -18,11 +18,9 @@ class ActivityStream extends React.Component {
 
   render () {
     const { activityList } = this.state;
-
     return (
       <div className="activityStreamContainer">
         <aside className="asideLeft">
-          left
         </aside>
         <section className="mainSection">
           <div className="activityStream">
