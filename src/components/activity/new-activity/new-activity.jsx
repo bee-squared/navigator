@@ -25,7 +25,14 @@ class NewActivity extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  exitNewActivity = () => {
+    window.location = `/dashboard`;
+  }
+
+
+
   addActivity = (e) => {
+    console.log("testing the submission")
     const {
       title,
       description,
@@ -40,34 +47,47 @@ class NewActivity extends React.Component {
     } = this.state;
     const url = process.env.REACT_APP_REST_API_LOCATION;
     const port = process.env.REACT_APP_API_PORT;
+    const accessKey = process.env.REACT_APP_API_UNSPLASH_ACCESS_KEY;
 
     const data = {
-      // set up data object to pass to server
+      title,
+      description,
+      date,
+      sport,
+      duration_hours,
+      duration_minutes,
+      distance,
+      elevation,
+      location,
+      rating,
     }
-
-
-    fetch(`${url}${port}/addActivity`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })
+    fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}`)
+      .then((results) => results.json())
+      .then((data) => data.urls.regular)
+      .then((imageUrl) => data.photo = imageUrl)
+      .then(() => {
+        fetch(`${url}${port}/addActivity`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+          .then(() => this.exitNewActivity())
+      })
   }
-
   render () {
     return (
-
       <div className="newActivityContainer">
         <div className="newActivityPageHeader">Add a New Activity</div>
         <div className="newActivityBody">
-          <form className="newActivityForm" name="newActivityForm" onSubmit="">
+          <form className="newActivityForm" name="newActivityForm" onSubmit={this.addActivity}>
             <div className="inputHeader">Title</div>
-            <input className="textInput" type="text" name="title" onChange={this.handleChange}/>
+            <input required className="textInput" type="text" name="title" onChange={this.handleChange}/>
             <div className="inputBlockContainer">
               <div className="sportContainer">
                 <div className="inputSportHeader">Sport</div>
-                  <select id="sport" class="DropDownInput" name="sport" onChange={this.handleChange}>
+                  <select id="sport" className="DropDownInput" name="sport" onChange={this.handleChange}>
                     <option value="none">Select a Sport</option>
                     <option value="Climb">Climb</option>
                     <option value="Hike">Hike</option>
@@ -78,7 +98,7 @@ class NewActivity extends React.Component {
               </div>
               <div className="dateContainer">
                 <div className="inputHeader">Date</div>
-                <input className="dateInput" type="date" name="date" onChange={this.handleChange}/>
+                <input required className="dateInput" type="date" name="date" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="inputBlockContainer">
@@ -104,17 +124,17 @@ class NewActivity extends React.Component {
             <textarea className="textAreaInput" type="text" name="description" onChange={this.handleChange}/>
             <div className="inputHeader">Rating</div>
             <select id="activityRating" name="rating" onChange={this.handleChange}>
-              <option class="ratingOption" value="none">Select a Rating</option>
-              <option class="ratingOption" value="5">5 - Glorious</option>
-              <option class="ratingOption" value="4">4 - Memorable</option>
-              <option class="ratingOption" value="3">3 - Meh</option>
-              <option class="ratingOption" value="2">2 - Just Okay</option>
-              <option class="ratingOption" value="1">1 - Never Again</option>
+              <option className="ratingOption" value="none">Select a Rating</option>
+              <option className="ratingOption" value="5">5 - Glorious</option>
+              <option className="ratingOption" value="4">4 - Memorable</option>
+              <option className="ratingOption" value="3">3 - Meh</option>
+              <option className="ratingOption" value="2">2 - Just Okay</option>
+              <option className="ratingOption" value="1">1 - Never Again</option>
             </select>
           </form>
           <div className="buttonContainer">
-            <ConfirmButton name={'Create'}/>
-            <button type="text" className="cancelButton">Cancel</button>
+            <ConfirmButton name={'Create'} function={this.addActivity}/>
+            <button type="text" className="cancelButton" onClick={this.exitNewActivity}>Cancel</button>
           </div>
         </div>
       </div>

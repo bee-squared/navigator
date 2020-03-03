@@ -29,28 +29,16 @@ class Activity extends React.Component {
         </div>
         <div className="activityDetailsContainer">
           <div className="distanceContainer">
-            <div className="activityDetailTitle">
-              Distance
-            </div>
-            <div className="activityDetail">
-              {activity.distance}
-            </div>
+            <div className="activityDetailTitle">Distance</div>
+            <div className="activityDetail">{activity.distance}</div>
           </div>
           <div className="elevationContainer">
-            <div className="activityDetailTitle">
-              Elevation
-            </div>
-            <div className="activityDetail">
-              {activity.elevation}
-            </div>
+            <div className="activityDetailTitle">Elevation</div>
+            <div className="activityDetail">{activity.elevation}</div>
           </div>
           <div className="timeContainer">
-            <div className="activityDetailTitle">
-              Time
-            </div>
-            <div className="activityDetail">
-              {`${activity.duration_hours}h${activity.duration_minutes}m`}
-            </div>
+            <div className="activityDetailTitle">Time</div>
+            <div className="activityDetail">{`${activity.duration_hours}h ${activity.duration_minutes}m`}</div>
           </div>
         </div>
         <div className="activityImageContainer">
@@ -65,7 +53,6 @@ class Activity extends React.Component {
 
 Activity.propTypes = {
   activity: propTypes.shape({
-  id: propTypes.string.isRequired,
   title: propTypes.string,
   description: propTypes.string,
   sport: propTypes.string.isRequired,

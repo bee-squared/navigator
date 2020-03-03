@@ -47,7 +47,7 @@ export default function ConfirmButton(props) {
 
   return (
     <div>
-      <BootstrapButton variant="contained" color="primary" disableRipple className={classes.margin}>
+      <BootstrapButton variant="contained" color="primary" className={classes.margin} type="submit" onClick={() => props.function()}>
         {props.name}
       </BootstrapButton>
     </div>
@@ -56,4 +56,5 @@ export default function ConfirmButton(props) {
 
 ConfirmButton.propTypes = {
   name: propTypes.string.isRequired,
+  function: propTypes.func,
 }

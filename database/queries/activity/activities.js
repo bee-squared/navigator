@@ -2,7 +2,7 @@ const db = require('../../index.js');
 
 const getAllActivities = function() {
   try {
-    return db.activityModel.find({});
+    return db.activityModel.find({}).sort('-date');
   }
   catch(e) {
     return 400;
