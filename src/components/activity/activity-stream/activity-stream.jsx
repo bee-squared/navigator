@@ -1,6 +1,7 @@
 import React from 'react';
 import Activity from '../activity/activity';
-import ActivityProfile from '../activity-profile/activity-profile'
+import ActivityProfile from '../activity-profile/activity-profile';
+import Recommendations from '../recommendations/recommendations';
 import './activity-stream.scss';
 
 class ActivityStream extends React.Component {
@@ -22,9 +23,11 @@ class ActivityStream extends React.Component {
     return (
       <div className="activityStreamContainer">
         <aside className="asideLeft">
+          <div className="activityColumnHeader">Profile</div>
           <ActivityProfile lastActivity={activityList[0]}/>
         </aside>
         <section className="mainSection">
+          <div className="activityColumnHeader">Activity Log</div>
           <div className="activityStream">
             {activityList ? activityList.map((activity) => {
               return <Activity activity={activity} key={`a${activity._id}`} />
@@ -32,7 +35,8 @@ class ActivityStream extends React.Component {
           </div>
         </section>
         <aside className="asideRight">
-          right
+          <div className="activityColumnHeader">Find a Route</div>
+          <Recommendations />
         </aside>
       </div>
     );
