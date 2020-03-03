@@ -67,7 +67,7 @@ class NewActivity extends React.Component {
             <div className="inputBlockContainer">
               <div className="sportContainer">
                 <div className="inputSportHeader">Sport</div>
-                  <select id="sport" class="DropDownInput" name="sport">
+                  <select id="sport" class="DropDownInput" name="sport" onChange={this.handleChange}>
                     <option value="none">Select a Sport</option>
                     <option value="Climb">Climb</option>
                     <option value="Hike">Hike</option>
@@ -78,32 +78,32 @@ class NewActivity extends React.Component {
               </div>
               <div className="dateContainer">
                 <div className="inputHeader">Date</div>
-                <input className="dateInput" type="date" name="date"/>
+                <input className="dateInput" type="date" name="date" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="inputBlockContainer">
               <div className="durationContainer">
                 <div className="inputHeader">Duration</div>
                 <div className="durationHoursMinutesContainer">
-                  <input id="durationHours" className="textInput" type="text" name="duration_hours" placeholder="Hours"/>
-                  <input id="durationMinutes" className="textInput" type="text" name="duration_minutes" placeholder="Minutes"/>
+                  <input id="durationHours" className="textInput" type="text" name="duration_hours" placeholder="Hours" onChange={this.handleChange}/>
+                  <input id="durationMinutes" className="textInput" type="text" name="duration_minutes" placeholder="Minutes" onChange={this.handleChange}/>
                 </div>
               </div>
               <div className="distanceContainer">
                 <div className="inputHeader">Distance</div>
-                <input className="textInput" type="text" name="distance" placeholder="Distance in miles"/>
+                <input className="textInput" type="text" name="distance" placeholder="Distance in miles" onChange={this.handleChange}/>
               </div>
               <div className="elevationContainer">
                 <div className="inputHeader">Elevation</div>
-                <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles"/>
+                <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="inputHeader">Location</div>
-            <input className="textInput" type="text" name="location"/>
+            <input className="textInput" type="text" name="location" onChange={this.handleChange}/>
             <div className="inputHeader">Description</div>
-            <textarea className="textAreaInput" type="text" name="description"/>
+            <textarea className="textAreaInput" type="text" name="description" onChange={this.handleChange}/>
             <div className="inputHeader">Rating</div>
-            <select id="activityRating" name="rating">
+            <select id="activityRating" name="rating" onChange={this.handleChange}>
               <option class="ratingOption" value="none">Select a Rating</option>
               <option class="ratingOption" value="5">5 - Glorious</option>
               <option class="ratingOption" value="4">4 - Memorable</option>
