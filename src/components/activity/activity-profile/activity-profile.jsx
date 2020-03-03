@@ -14,8 +14,16 @@ class ActivityProfile extends React.Component {
   render () {
     return (
       <div className="activityProfileContainer">
-        <div className="imageProfileContainer">
+        <div className="profileHeaderContainer">
           <ImageAvatar url={`${process.env.REACT_APP_PHOTOS}/navigator/profile_gswemr.jpg`}/>
+          <div className="userNameLocationContainer">
+            <div className="userFullName">
+              Brian Bouchard
+            </div>
+            <div className="hometown">
+              Boulder, CO
+            </div>
+          </div>
         </div>
       </div>
     );
