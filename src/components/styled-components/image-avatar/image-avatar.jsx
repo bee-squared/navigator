@@ -20,7 +20,7 @@ export default function ImageAvatar(props) {
 
   return (
     <div className={classes.root}>
-      <Avatar alt="avatar" src={props.url} className={classes.large}/>
+      <Avatar id="userAvatar" alt="avatar" src={props.url} className={classes.large}/>
     </div>
   );
 }
