@@ -1,5 +1,6 @@
 import React from 'react';
 import Activity from '../activity/activity';
+import ActivityProfile from '../activity-profile/activity-profile'
 import './activity-stream.scss';
 
 class ActivityStream extends React.Component {
@@ -21,6 +22,7 @@ class ActivityStream extends React.Component {
     return (
       <div className="activityStreamContainer">
         <aside className="asideLeft">
+          <ActivityProfile/>
         </aside>
         <section className="mainSection">
           <div className="activityStream">
