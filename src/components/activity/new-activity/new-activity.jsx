@@ -6,8 +6,23 @@ class NewActivity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      title: '',
+      description: '',
+      date: null,
+      sport: '',
+      duration_hours: null,
+      duration_minutes: null,
+      distance: null,
+      elevation: null,
+      location: '',
+      rating: null,
+      photo: '',
     }
+  }
+
+  handleChange = (e) => {
+    e.preventDefault();
+    this.setState({ [e.target.name]: e.target.value })
   }
 
   render () {
@@ -16,9 +31,9 @@ class NewActivity extends React.Component {
       <div className="newActivityContainer">
         <div className="newActivityPageHeader">Add a New Activity</div>
         <div className="newActivityBody">
-          <form>
+          <form >
             <div className="inputHeader">Title</div>
-            <input className="textInput" type="text" name="title"/>
+            <input className="textInput" type="text" name="title" onChange={this.handleChange}/>
             <div className="inputBlockContainer">
               <div className="sportContainer">
                 <div className="inputSportHeader">Sport</div>
@@ -40,8 +55,8 @@ class NewActivity extends React.Component {
               <div className="durationContainer">
                 <div className="inputHeader">Duration</div>
                 <div className="durationHoursMinutesContainer">
-                  <input id="durationHours" className="textInput" type="text" name="durationHours" placeholder="Hours"/>
-                  <input id="durationMinutes" className="textInput" type="text" name="durationMinutes" placeholder="Minutes"/>
+                  <input id="durationHours" className="textInput" type="text" name="duration_hours" placeholder="Hours"/>
+                  <input id="durationMinutes" className="textInput" type="text" name="duration_minutes" placeholder="Minutes"/>
                 </div>
               </div>
               <div className="distanceContainer">
