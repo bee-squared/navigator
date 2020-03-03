@@ -61,6 +61,7 @@ Activity.propTypes = {
   distance: propTypes.number,
   elevation: propTypes.number,
   location: propTypes.string,
+  photo: propTypes.string,
   __v: propTypes.number,
   }),
 }

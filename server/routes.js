@@ -4,14 +4,20 @@ const activity = require('../database/queries/activity/activities.js');
 
 /* --------------------- Get --------------------- */
 // activities
-router.get('/getAllActivities', function (req, res) {
+router.get('/allActivities', function (req, res) {
   activity.getAllActivities()
     .then((results) => res.status(200).send(results));
 })
 
-router.get('/getActivity', function (req, res) {
+router.get('/activity', function (req, res) {
   res.send("route is working");
     // .then((results) => res.status(200).send(results))
+})
+
+router.get('/activeDays', function(req, res) {
+  activity.getActiveDays()
+    .then((results) => res.status(200).send(`${results}`))
+    .catch((error) => console.log(error));
 })
 
 /* --------------------- Add --------------------- */

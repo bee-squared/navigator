@@ -9,6 +9,15 @@ const getAllActivities = function() {
   }
 }
 
+const getActiveDays = function(year) {
+  try {
+    return db.activityModel.countDocuments({'date': { $gt: new Date(`${getCurrentYear()-1}-12-31`) }})
+  }
+  catch(e) {
+    return 400;
+  }
+}
+
 const addActivity = function(activity) {
   const newActivity = new db.activityModel(activity);
   try {
@@ -20,7 +29,14 @@ const addActivity = function(activity) {
   }
 }
 
+const getCurrentYear = function() {
+  const date = new Date();
+  const year = date.getFullYear();
+  return year;
+}
+
 module.exports = {
   getAllActivities,
-  addActivity
+  getActiveDays,
+  addActivity,
 }

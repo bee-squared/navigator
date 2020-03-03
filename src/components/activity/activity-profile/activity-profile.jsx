@@ -1,4 +1,5 @@
 import React from 'react';
+import Moment from 'moment';
 import './activity-profile.scss';
 import ImageAvatar from '../../styled-components/image-avatar/image-avatar'
 import propTypes from 'prop-types';
@@ -7,11 +8,20 @@ class ActivityProfile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      activeDays: 0,
     }
   }
 
+  componentDidMount() {
+    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/activeDays`)
+    .then((results) => results.json())
+    .then((activeDays) => this.setState({ activeDays }));
+  }
+
   render () {
+    const { activeDays } = this.state;
+    const { lastActivity } = this.props;
+
     return (
       <div className="activityProfileContainer">
         <div className="profileHeaderContainer">
@@ -33,18 +43,33 @@ class ActivityProfile extends React.Component {
           <div className="profileStatsContainer">
             <div className="profileStatTitle">Last Activity:</div>
             <span> </span>
-            <div className="profileStat">Date Holder</div>
+            <div className="profileStat">{lastActivity ? Moment(lastActivity.date).format('MMMM Do YYYY') : null}</div>
           </div>
           <div className="dividerLine"></div>
           <div className="profileStatsContainer">
             <div className="profileStatTitle">{`Active Days This Year: `}</div>
             <span> </span>
-            <div className="profileStat">Number of Active Days Holder</div>
+            <div className="profileStat">{activeDays}</div>
           </div>
         </div>
       </div>
     );
   }
+}
+
+ActivityProfile.propTypes = {
+  lastActivity: propTypes.shape({
+    title: propTypes.string,
+    description: propTypes.string,
+    sport: propTypes.string.isRequired,
+    duration_hours: propTypes.number,
+    duration_minutes: propTypes.number,
+    distance: propTypes.number,
+    elevation: propTypes.number,
+    location: propTypes.string,
+    photo: propTypes.string,
+    __v: propTypes.number,
+    }),
 }
 
 export default ActivityProfile;
