@@ -25,13 +25,43 @@ class NewActivity extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  addActivity = (e) => {
+    const {
+      title,
+      description,
+      date,
+      sport,
+      duration_hours,
+      duration_minutes,
+      distance,
+      elevation,
+      location,
+      rating,
+    } = this.state;
+    const url = process.env.REACT_APP_REST_API_LOCATION;
+    const port = process.env.REACT_APP_API_PORT;
+
+    const data = {
+      // set up data object to pass to server
+    }
+
+
+    fetch(`${url}${port}/addActivity`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+  }
+
   render () {
     return (
 
       <div className="newActivityContainer">
         <div className="newActivityPageHeader">Add a New Activity</div>
         <div className="newActivityBody">
-          <form >
+          <form className="newActivityForm" name="newActivityForm" onSubmit="">
             <div className="inputHeader">Title</div>
             <input className="textInput" type="text" name="title" onChange={this.handleChange}/>
             <div className="inputBlockContainer">
