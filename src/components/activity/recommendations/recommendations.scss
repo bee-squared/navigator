@@ -31,3 +31,23 @@
   color: white;
   height: 30px;
 }
+
+
+.clearButton {
+  display: inline-block;
+  margin-left: 15px;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.2em;
+}
+
+.clearButton:hover {
+  cursor: pointer;
+  color: #c0c0c5;
+  font-weight: bolder;
+}
+
+.clearButton:active {
+  color: #336699;
+}

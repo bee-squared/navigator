@@ -20,6 +20,7 @@ const getActiveDays = function(year) {
 
 const getRecommendations = function(queryParams) {
   try {
+    // set up thresholds and query paramaters
     if (queryParams.elevation) {
       const elevationThreshold = 500;
       const elevationLow = Number.parseInt(queryParams.elevation) - elevationThreshold;
@@ -27,7 +28,6 @@ const getRecommendations = function(queryParams) {
 
       queryParams.elevation = {$gte: elevationLow, $lte: elevationHigh}
     }
-
     if (queryParams.distance) {
       const distanceThreshold = 5;
       const distanceLow = Number.parseInt(queryParams.distance) - distanceThreshold;

@@ -13,7 +13,10 @@ Technologies to Establish Best-Practices
 -Prop-Types
 -Airb&b Linter
 
-
+Feature Requests
+- Show 5 day forecast
+- Schedule activity from recommendations
+- Esri
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

@@ -19,7 +19,6 @@ class ActivityStream extends React.Component {
   }
 
   getRecommendations = (params) => {
-    const { activityList } = this.state;
     let queryParams = '';
 
     for (let i = 0; i < Object.entries(params).length; i++) {

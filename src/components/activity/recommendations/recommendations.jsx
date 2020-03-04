@@ -6,30 +6,47 @@ class Recommendations extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      distance: null,
-      location: null,
-      elevation: null,
-      sport: null,
+      formFields: {
+        distance: null,
+        location: null,
+        elevation: null,
+        sport: null,
+      },
+      toggleRecommendations: false,
     }
   }
 
   handleChange = (e) => {
     e.preventDefault();
-    this.setState({ [e.target.name]: e.target.value })
+    const { formFields } = this.state;
+
+    formFields[e.target.name] = e.target.value;
+    this.setState({ formFields }, this.toggle);
+  }
+
+  toggle = () => {
+    const { toggleRecommendations } = this.state;
+    const { distance, location, elevation, sport } = this.state.formFields;
+
+    if ((distance || location || elevation || sport) && !toggleRecommendations) {
+      this.setState({ toggleRecommendations: true})
+    } else if ((!distance && !location && !elevation && !sport) && toggleRecommendations){
+      this.setState({ toggleRecommendations: false})
+    }
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
-    const { distance, location, elevation, sport } = this.state;
+    const { formFields } = this.state;
+    const { distance, location, elevation, sport } = this.state.formFields;
     const { getRecommendations } = this.props;
     const params = {};
-
     if (!distance && !location && !elevation && !sport) {
       // need to let the user know there is nothing selected
     } else {
-      for (let key in this.state) {
-        if (this.state[key] != null) {
-          params[key] = this.state[key]
+      for (let key in formFields) {
+        if (formFields[key] != null) {
+          params[key] = formFields[key]
         }
       }
       getRecommendations(params)
@@ -37,7 +54,7 @@ class Recommendations extends React.Component {
   }
 
   render () {
-    const { activityList } = this.state;
+    const { toggleRecommendations } = this.state;
     return (
       <div className="recommendationsContainer">
         <form className="recommendationsForm" onSubmit={this.handleSubmit}>
@@ -65,6 +82,7 @@ class Recommendations extends React.Component {
             <input type="text" className="goalInput" name="elevation" onChange={this.handleChange}/>
           </div>
           <button className="getRecommendationsButton" type="submit">Get Recommendations</button>
+          { toggleRecommendations ? <button type="text" className="clearButton" >Clear</button> : null }
         </form>
       </div>
     );
