@@ -35,6 +35,12 @@ class Recommendations extends React.Component {
     }
   }
 
+  handleClear = (e) => {
+    // e.preventDefault();
+    console.log("testing")
+    // document.getElementsByClassName('recommendationsForm').resetForm();
+  }
+
   handleSubmit = (e) => {
     e.preventDefault();
     const { formFields } = this.state;
@@ -82,7 +88,7 @@ class Recommendations extends React.Component {
             <input type="text" className="goalInput" name="elevation" onChange={this.handleChange}/>
           </div>
           <button className="getRecommendationsButton" type="submit">Get Recommendations</button>
-          { toggleRecommendations ? <button type="text" className="clearButton" >Clear</button> : null }
+          { toggleRecommendations ? <button type="reset" className="clearButton" onClick={this.handleClear}>Clear</button> : null }
         </form>
       </div>
     );
