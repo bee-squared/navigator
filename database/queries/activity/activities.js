@@ -20,8 +20,23 @@ const getActiveDays = function(year) {
 
 const getRecommendations = function(queryParams) {
   try {
-    console.log(queryParams)
-    // return db.activityModel.countDocuments({'date': { $gt: new Date(`${getCurrentYear()-1}-12-31`) }})
+    if (queryParams.elevation) {
+      const elevationThreshold = 500;
+      const elevationLow = Number.parseInt(queryParams.elevation) - elevationThreshold;
+      const elevationHigh = Number.parseInt(queryParams.elevation) + elevationThreshold;
+
+      queryParams.elevation = {$gte: elevationLow, $lte: elevationHigh}
+    }
+
+    if (queryParams.distance) {
+      const distanceThreshold = 5;
+      const distanceLow = Number.parseInt(queryParams.distance) - distanceThreshold;
+      const distanceHigh = Number.parseInt(queryParams.distance) + distanceThreshold;
+
+      queryParams.elevation = {$gte: distanceLow, $lte: distanceHigh}
+    }
+
+    return db.activityModel.find(queryParams)
   }
   catch(e) {
     return 400;
@@ -48,5 +63,6 @@ const getCurrentYear = function() {
 module.exports = {
   getAllActivities,
   getActiveDays,
+  getRecommendations,
   addActivity,
 }

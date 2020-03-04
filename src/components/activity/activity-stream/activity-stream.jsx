@@ -30,12 +30,9 @@ class ActivityStream extends React.Component {
       queryParams += `&${Object.entries(params)[i][0]}=${Object.entries(params)[i][1]}`;
     }
 
-    // fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`, {
-
-    // })
-      // .then((results) => results.json())
-      // .then((data) => console.log(data))
-      // .then((activityList) => this.setState({ activityList }));
+    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/recommendations${queryParams}`)
+      .then((results) => results.json())
+      .then((activityList) => this.setState({ activityList }));
   }
 
   render () {
