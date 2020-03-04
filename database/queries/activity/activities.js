@@ -32,8 +32,7 @@ const getRecommendations = function(queryParams) {
       const distanceThreshold = 5;
       const distanceLow = Number.parseInt(queryParams.distance) - distanceThreshold;
       const distanceHigh = Number.parseInt(queryParams.distance) + distanceThreshold;
-
-      queryParams.elevation = {$gte: distanceLow, $lte: distanceHigh}
+      queryParams.distance = {$gte: distanceLow, $lte: distanceHigh}
     }
 
     return db.activityModel.find(queryParams)
