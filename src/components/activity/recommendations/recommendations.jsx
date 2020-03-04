@@ -22,14 +22,18 @@ class Recommendations extends React.Component {
     e.preventDefault();
     const { distance, location, elevation, sport } = this.state;
     const { getRecommendations } = this.props;
+    const params = {};
 
     if (!distance && !location && !elevation && !sport) {
       // need to let the user know there is nothing selected
     } else {
-      
+      for (let key in this.state) {
+        if (this.state[key] != null) {
+          params[key] = this.state[key]
+        }
+      }
+      getRecommendations(params)
     }
-
-    // `${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`
   }
 
   render () {

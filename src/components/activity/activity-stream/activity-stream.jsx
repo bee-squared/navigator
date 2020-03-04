@@ -18,12 +18,14 @@ class ActivityStream extends React.Component {
       .then((activityList) => this.setState({ activityList }));
   }
 
-  getRecommendations = (query) => {
+  getRecommendations = (params) => {
     const { activityList } = this.state;
-    // fetch(query)
-    //   .then((results) => results.json())
-    //   .then((activityList) => this.setState({ activityList }));
-    console.log(query)
+    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`, {
+
+    })
+      // .then((results) => results.json())
+      // .then((data) => console.log(data))
+      // .then((activityList) => this.setState({ activityList }));
   }
 
   render () {

@@ -18,6 +18,16 @@ const getActiveDays = function(year) {
   }
 }
 
+const getRecommendations = function(queryParams) {
+  try {
+    console.log(queryParams)
+    // return db.activityModel.countDocuments({'date': { $gt: new Date(`${getCurrentYear()-1}-12-31`) }})
+  }
+  catch(e) {
+    return 400;
+  }
+}
+
 const addActivity = function(activity) {
   const newActivity = new db.activityModel(activity);
   try {

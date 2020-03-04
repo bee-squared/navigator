@@ -20,6 +20,13 @@ router.get('/activeDays', function(req, res) {
     .catch((error) => console.log(error));
 })
 
+router.get('/recommendations', function(req, res) {
+  res.send(req.body)
+  // activity.getRecommendations(req.body)
+  //   .then((results) => res.status(200).send(`${results}`))
+  //   .catch((error) => console.log(error));
+})
+
 /* --------------------- Add --------------------- */
 router.post('/addActivity', (req, res) => {
   activity.addActivity(req.body)
