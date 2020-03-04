@@ -47,7 +47,11 @@ class ActivityStream extends React.Component {
       <div className="activityStreamContainer">
         <aside className="asideLeft">
           <div className="activityColumnHeader">Profile</div>
-          <ActivityProfile lastActivity={activityList[0]}/>
+          <ActivityProfile lastActivity={activityList[0]} className="activityProfileComponent"/>
+          <div className="activityColumnHeader">
+            Analytics
+            <div className="analyticsContainer"></div>
+          </div>
         </aside>
         <section className="mainSection">
           <div className="activityColumnHeader">Activity Log</div>
