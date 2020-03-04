@@ -34,6 +34,13 @@ class ActivityStream extends React.Component {
       .then((activityList) => this.setState({ activityList }));
   }
 
+  handleClear = (e) => {
+    console.log("should clear")
+    fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`)
+      .then((results) => results.json())
+      .then((activityList) => this.setState({ activityList }));
+  }
+
   render () {
     const { activityList } = this.state;
     return (
@@ -52,7 +59,7 @@ class ActivityStream extends React.Component {
         </section>
         <aside className="asideRight">
           <div className="activityColumnHeader">Find a Route</div>
-          <Recommendations getRecommendations={this.getRecommendations}/>
+          <Recommendations getRecommendations={this.getRecommendations} handleClear={this.handleClear}/>
         </aside>
       </div>
     );
