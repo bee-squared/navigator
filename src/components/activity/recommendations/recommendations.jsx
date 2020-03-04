@@ -1,4 +1,5 @@
 import React from 'react';
+import propTypes from 'prop-types';
 import './recommendations.scss';
 
 class Recommendations extends React.Component {
@@ -8,6 +9,7 @@ class Recommendations extends React.Component {
       distance: null,
       location: null,
       elevation: null,
+      sport: null,
     }
   }
 
@@ -16,11 +18,25 @@ class Recommendations extends React.Component {
     this.setState({ [e.target.name]: e.target.value })
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault();
+    const { distance, location, elevation, sport } = this.state;
+    const { getRecommendations } = this.props;
+
+    if (!distance && !location && !elevation && !sport) {
+      // need to let the user know there is nothing selected
+    } else {
+      
+    }
+
+    // `${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`
+  }
+
   render () {
     const { activityList } = this.state;
     return (
       <div className="recommendationsContainer">
-        <form className="recommendationsForm">
+        <form className="recommendationsForm" onSubmit={this.handleSubmit}>
           <div className="inputGoalTitle">Sport</div>
           <div className="goalInputDropdown">
             <select id="sport" className="dropdownInput" name="sport" onChange={this.handleChange}>
@@ -44,10 +60,15 @@ class Recommendations extends React.Component {
           <div>
             <input type="text" className="goalInput" name="elevation" onChange={this.handleChange}/>
           </div>
+          <button className="getRecommendationsButton" type="submit">Get Recommendations</button>
         </form>
       </div>
     );
   }
+}
+
+Recommendations.propTypes = {
+  getRecommendations: propTypes.func.isRequired,
 }
 
 export default Recommendations;

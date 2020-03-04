@@ -18,6 +18,14 @@ class ActivityStream extends React.Component {
       .then((activityList) => this.setState({ activityList }));
   }
 
+  getRecommendations = (query) => {
+    const { activityList } = this.state;
+    // fetch(query)
+    //   .then((results) => results.json())
+    //   .then((activityList) => this.setState({ activityList }));
+    console.log(query)
+  }
+
   render () {
     const { activityList } = this.state;
     return (
@@ -36,7 +44,7 @@ class ActivityStream extends React.Component {
         </section>
         <aside className="asideRight">
           <div className="activityColumnHeader">Find a Route</div>
-          <Recommendations />
+          <Recommendations getRecommendations={this.getRecommendations}/>
         </aside>
       </div>
     );
