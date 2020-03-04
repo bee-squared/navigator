@@ -21,7 +21,7 @@ router.get('/activeDays', function(req, res) {
 })
 
 router.get('/recommendations', function(req, res) {
-  res.send(req.body)
+  res.send(req.query)
   // activity.getRecommendations(req.body)
   //   .then((results) => res.status(200).send(`${results}`))
   //   .catch((error) => console.log(error));
