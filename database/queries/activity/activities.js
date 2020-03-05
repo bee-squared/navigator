@@ -22,7 +22,7 @@ const getRecommendations = function(queryParams) {
   try {
     // set up thresholds and query paramaters
     if (queryParams.elevation) {
-      const elevationThreshold = 500;
+      const elevationThreshold = 300;
       const elevationLow = Number.parseInt(queryParams.elevation) - elevationThreshold;
       const elevationHigh = Number.parseInt(queryParams.elevation) + elevationThreshold;
 
@@ -35,6 +35,12 @@ const getRecommendations = function(queryParams) {
       queryParams.distance = {$gte: distanceLow, $lte: distanceHigh}
     }
 
+    if (queryParams.location) {
+      console.log(queryParams.location)
+      queryParams.location = { $regex: queryParams.location, $options: 'i' }
+      console.log(queryParams.location)
+    }
+    console.log(queryParams)
     return db.activityModel.find(queryParams)
   }
   catch(e) {
