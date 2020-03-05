@@ -26,21 +26,45 @@ class NewActivity extends React.Component {
       location: '',
       rating: null,
       photo: '',
-      lat: 40.0150,
-      lng: -105.2705,
+      lat: 39.7392,
+      lng: -104.9903,
       zoom: 12,
       markers: [],
     }
   }
 
+  componentDidMount = () => {
+    var options = {
+      enableHighAccuracy: true,
+      timeout: 5000,
+      maximumAge: 0
+    };
+
+    // this.setState({ lat: crd.latitude, lng: crd.longitude })
+
+    function success(pos) {
+      var crd = pos.coords;
+      console.log('Your current position is:');
+      console.log(`Latitude : ${crd.latitude}`);
+      console.log(`Longitude: ${crd.longitude}`);
+      console.log(`More or less ${crd.accuracy} meters.`);
+
+
+    }
+
+    function error(err) {
+      console.warn(`ERROR(${err.code}): ${err.message}`);
+    }
+
+    navigator.geolocation.getCurrentPosition(success, error, options);
+  }
+
   addMarker = (e) => {
-    console.log(e)
+    console.log(e.target._zoom)
     let {markers} = this.state
     markers[0] ? markers.pop() : markers = [];
     markers.push(e.latlng)
-    this.setState({markers}, () => {
-      this.setState({ lat: markers[0].lat, lng: markers[0].lng})
-    })
+    this.setState({markers, lat: markers[0].lat, lng: markers[0].lng, zoom: e.target._zoom})
   }
 
   handleChange = (e) => {
