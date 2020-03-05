@@ -35,7 +35,6 @@ class ActivityStream extends React.Component {
   }
 
   handleClear = (e) => {
-    console.log("should clear")
     fetch(`${process.env.REACT_APP_REST_API_LOCATION}${process.env.REACT_APP_API_PORT}/allActivities`)
       .then((results) => results.json())
       .then((activityList) => this.setState({ activityList }));

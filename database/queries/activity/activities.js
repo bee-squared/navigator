@@ -36,9 +36,7 @@ const getRecommendations = function(queryParams) {
     }
 
     if (queryParams.location) {
-      console.log(queryParams.location)
       queryParams.location = { $regex: queryParams.location, $options: 'i' }
-      console.log(queryParams.location)
     }
     console.log(queryParams)
     return db.activityModel.find(queryParams)

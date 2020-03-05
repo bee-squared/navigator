@@ -22,6 +22,7 @@ class Recommendations extends React.Component {
 
     formFields[e.target.name] = e.target.value;
     this.setState({ formFields }, this.toggle);
+
   }
 
   toggle = () => {
@@ -33,6 +34,39 @@ class Recommendations extends React.Component {
     } else if ((!distance && !location && !elevation && !sport) && toggleRecommendations){
       this.setState({ toggleRecommendations: false})
     }
+  }
+
+  handleReset = (e) => {
+    e.preventDefault();
+    const { handleClear  } = this.props;
+    const { formFields } = this.state;
+
+    for (let key in formFields) {
+      if (formFields[key] != null) {
+        formFields[key] = null;
+      }
+    }
+
+    this.setState({ formFields, toggleRecommendations: false }, () => {
+      handleClear();
+    })
+    let fields = document.getElementsByClassName('recommendationsForm');
+
+    for (let key in fields[0].elements) {
+      if (fields[0].elements[key].name === 'sport' ) {
+        fields[0].elements[key].value = 'none';
+      } else if (
+          fields[0].elements[key].name === 'location' ||
+          fields[0].elements[key].name === 'elevation' ||
+          fields[0].elements[key].name === 'distance') {
+        fields[0].elements[key].value = null;
+      }
+    }
+
+    if (fields.length > 0) {
+
+    }
+
   }
 
   handleSubmit = (e) => {
@@ -55,7 +89,6 @@ class Recommendations extends React.Component {
 
   render () {
     const { toggleRecommendations } = this.state;
-    const { handleClear  } = this.props;
     return (
       <div className="recommendationsContainer">
         <form className="recommendationsForm" onSubmit={this.handleSubmit}>
@@ -83,7 +116,7 @@ class Recommendations extends React.Component {
             <input type="text" className="goalInput" name="elevation" onChange={this.handleChange}/>
           </div>
           <button className="getRecommendationsButton" type="submit">Get Recommendations</button>
-          { toggleRecommendations ? <button type="reset" className="clearButton" onClick={handleClear}>Clear</button> : null }
+          { toggleRecommendations ? <button type="reset" className="clearButton" onClick={this.handleReset}>Clear</button> : null }
         </form>
       </div>
     );
