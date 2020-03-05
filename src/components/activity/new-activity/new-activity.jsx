@@ -47,8 +47,9 @@ class NewActivity extends React.Component {
   handleAutocompleteSelect = (address) => {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
-      .then(latLng => this.setState({ lat: latLng.lat, lng: latLng.lng }))
+      .then(latLng => this.setState({ lat: latLng.lat, lng: latLng.lng, location: address }))
       .catch(error => console.error('Error', error));
+
   };
 
   componentDidMount = () => {
@@ -166,10 +167,12 @@ class NewActivity extends React.Component {
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                   <div>
+                    <div className="inputHeader">Location</div>
                     <input
                       {...getInputProps({
                         placeholder: 'Search Places ...',
-                        className: 'location-search-input',
+                        className: 'textInput',
+                        name: 'location',
                       })}
                   />
                   <div className="autocomplete-dropdown-container">
@@ -233,8 +236,6 @@ class NewActivity extends React.Component {
                 <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles" onChange={this.handleChange}/>
               </div>
             </div>
-            <div className="inputHeader">Location</div>
-            <input className="textInput" type="text" name="location" onChange={this.handleChange}/>
             <div className="inputHeader">Description</div>
             <textarea className="textAreaInput" type="text" name="description" onChange={this.handleChange}/>
             <div className="inputHeader">Rating</div>
