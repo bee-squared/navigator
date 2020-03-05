@@ -34,8 +34,9 @@ class NewActivity extends React.Component {
   }
 
   addMarker = (e) => {
+    console.log(e)
     let {markers} = this.state
-    markers[0] ? markers.pop() : markers = []; 
+    markers[0] ? markers.pop() : markers = [];
     markers.push(e.latlng)
     this.setState({markers}, () => {
       this.setState({ lat: markers[0].lat, lng: markers[0].lng})
