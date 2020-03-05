@@ -34,29 +34,22 @@ class NewActivity extends React.Component {
   }
 
   componentDidMount = () => {
-    var options = {
+    const options = {
       enableHighAccuracy: true,
       timeout: 5000,
       maximumAge: 0
     };
 
-    // this.setState({ lat: crd.latitude, lng: crd.longitude })
-
-    function success(pos) {
-      var crd = pos.coords;
-      console.log('Your current position is:');
-      console.log(`Latitude : ${crd.latitude}`);
-      console.log(`Longitude: ${crd.longitude}`);
-      console.log(`More or less ${crd.accuracy} meters.`);
-
-
-    }
-
     function error(err) {
       console.warn(`ERROR(${err.code}): ${err.message}`);
     }
 
-    navigator.geolocation.getCurrentPosition(success, error, options);
+    navigator.geolocation.getCurrentPosition(async (position) => {
+      await this.setState({ lat: position.coords.latitude, lng: position.coords.longitude });
+    },
+    error,
+    options)
+
   }
 
   addMarker = (e) => {
