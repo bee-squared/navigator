@@ -26,10 +26,20 @@ class NewActivity extends React.Component {
       location: '',
       rating: null,
       photo: '',
-      lat: 51.505,
-      lng: -0.09,
-      zoom: 13,
+      lat: 40.0150,
+      lng: -105.2705,
+      zoom: 12,
+      markers: [],
     }
+  }
+
+  addMarker = (e) => {
+    let {markers} = this.state
+    markers[0] ? markers.pop() : markers = []; 
+    markers.push(e.latlng)
+    this.setState({markers}, () => {
+      this.setState({ lat: markers[0].lat, lng: markers[0].lng})
+    })
   }
 
   handleChange = (e) => {
@@ -89,12 +99,6 @@ class NewActivity extends React.Component {
       })
   }
 
-  state = {
-    lat: 51.505,
-    lng: -0.09,
-    zoom: 13,
-  }
-
   render () {
     const position = [this.state.lat, this.state.lng]
 
@@ -102,14 +106,14 @@ class NewActivity extends React.Component {
       <div className="newActivityContainer">
         <div className="newActivityPageHeader">Add a New Activity</div>
         <div className="newActivityBody">
-          <Map className="map" center={position} zoom={this.state.zoom}>
+          <Map className="map" center={position} zoom={this.state.zoom} onClick={this.addMarker}>
             <TileLayer
               attribution='&amp;copy <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
               url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             />
             <Marker position={position} icon={lIcon}>
               <Popup>
-                A pretty CSS3 popup. <br /> Easily customizable.
+                This is a cool location
               </Popup>
             </Marker>
           </Map>
