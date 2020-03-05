@@ -20,6 +20,9 @@ const activitySchema = new mongoose.Schema({
   location: String,
   rating: Number,
   photo: String,
+  lat: Number,
+  lng: Number,
+  timezone: Number,
 })
 
 const activityModel = mongoose.model('activity', activitySchema);
