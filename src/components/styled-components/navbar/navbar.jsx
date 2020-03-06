@@ -14,11 +14,12 @@ const useStyles = makeStyles(theme => ({
     width: '100vw',
   },
   app: {
-    background: '#C0C0C5',
+    background: '#d9d9d9',
     color: '#336699',
     height: 75,
   },
   menuButton: {
+    marginTop: '10px',
     marginRight: theme.spacing(2),
     align: 'auto',
   },
@@ -39,6 +40,7 @@ const useStyles = makeStyles(theme => ({
     border: '1px black',
   },
   addButton: {
+    marginTop: '10px',
     color: '#ffffff',
     backgroundColor: '#336699',
     '&:hover': {

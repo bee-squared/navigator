@@ -2,6 +2,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import Moment from 'moment';
 import './activity.scss';
+import '../../../library/weather-icons-master/css/weather-icons.css'
 
 
 class Activity extends React.Component {
@@ -14,6 +15,30 @@ class Activity extends React.Component {
 
   render () {
     const { activity } = this.props;
+    let displayIcon;
+    if (activity.weather) {
+      const { icon } = activity.weather;
+      switch (icon) {
+        case 'clear-day ':
+          displayIcon = 'wi-day-sunny';
+          break
+        default:
+          displayIcon = 'partly-cloudy-day'
+      }
+    }
+    console.log('the icon type: ', displayIcon)
+
+// clear-day
+// clear-night
+// partly-cloudy-day
+// partly-cloudy-night
+// cloudy
+// rain
+// sleet
+// snow
+// wind
+// fog
+
     return (
       <div className="activityContainer">
         <div className="activityHeaderContainer">
@@ -42,9 +67,30 @@ class Activity extends React.Component {
           </div>
         </div>
         <div className="activityImageContainer">
-          <div className="activityImageContainerInside">
-            <img className="activityImage" src={activity.photo} alt="activity"/>
+          <div className={
+            activity.photo.includes('google')
+              ?
+                'activityImageContainerInsideMap'
+              :
+                'activityImageContainerInside'}>
+            {activity.photo.includes('google')
+              ?
+                <iframe title="routeMap" className="routeMap" src={`${activity.photo}&zoom=8`}></iframe>
+              :
+                <img className="activityImage" src={activity.photo} alt="activity"/>}
           </div>
+        </div>
+        <div className="activityWeather">
+
+          { activity.weather ? 'Average Temperature: ' : null }
+          { activity.weather ? ((activity.weather.temperatureMax + activity.weather.temperatureMin) / 2).toFixed(1) : null }
+          { activity.weather ? String.fromCharCode(176) : null }
+          { activity.weather ? 'F  ' : null }
+          { activity.weather ? <i class="wi wi-night-sleet"></i> : null}
+
+          {
+            // if (activity.weather.icon)
+          }
         </div>
       </div>
     );

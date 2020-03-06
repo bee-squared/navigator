@@ -22,7 +22,6 @@ class Recommendations extends React.Component {
 
     formFields[e.target.name] = e.target.value;
     this.setState({ formFields }, this.toggle);
-
   }
 
   toggle = () => {
@@ -62,11 +61,6 @@ class Recommendations extends React.Component {
         fields[0].elements[key].value = null;
       }
     }
-
-    if (fields.length > 0) {
-
-    }
-
   }
 
   handleSubmit = (e) => {

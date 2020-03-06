@@ -49,13 +49,18 @@ const getRecommendations = function(queryParams) {
 }
 
 const addActivity = function(activity) {
-  const newActivity = new db.activityModel(activity);
   try {
-    fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T12:00:00Z?exclude=currently,minutely,hourly,alerts`)
-     .then(res => res.json())
-     .then(weather => console.log(weather.daily.data.tem));
-    // return newActivity.save()
-    // .then(() => 201);
+    console.log(activity.date)
+    fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T14:00:00Z?exclude=currently,minutely,hourly,alerts`)
+    .then(res => res.json())
+    .then(weatherData => weatherData.daily.data[0])
+    .then(weather => {
+      activity.weather = {summary: weather.summary, icon: weather.icon, sunriseTime: weather.summaryTime, sunsetTime: weather.sunsetTime, temperatureMin: weather.temperatureMin, temperatureMax: weather.temperatureMax, windSpeed: weather.windSpeed, windBearing: weather.windBearing}
+      const newActivity = new db.activityModel(activity);
+      return newActivity;
+     })
+    .then((newActivity) => newActivity.save())
+    .then(() => 201);
   }
   catch(e) {
     return 400;

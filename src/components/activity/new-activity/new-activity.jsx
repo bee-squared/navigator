@@ -68,11 +68,9 @@ class NewActivity extends React.Component {
     },
     error,
     options)
-
   }
 
   addMarker = (e) => {
-    console.log(e)
     let {markers} = this.state
     markers[0] ? markers.pop() : markers = [];
     markers.push(e.latlng)
@@ -91,7 +89,6 @@ class NewActivity extends React.Component {
 
 
   addActivity = (e) => {
-    console.log("testing the submission")
     const {
       title,
       description,
@@ -136,8 +133,8 @@ class NewActivity extends React.Component {
           },
           body: JSON.stringify(data),
         })
-          .then(() => this.exitNewActivity())
       })
+      .then(() => this.exitNewActivity())
   }
 
   render () {
