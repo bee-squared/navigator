@@ -1,4 +1,6 @@
 const db = require('../../index.js');
+const fetch = require('node-fetch');
+
 
 const getAllActivities = function() {
   try {
@@ -49,8 +51,11 @@ const getRecommendations = function(queryParams) {
 const addActivity = function(activity) {
   const newActivity = new db.activityModel(activity);
   try {
-    return newActivity.save()
-    .then(() => 201);
+    fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T12:00:00Z?exclude=currently,minutely,hourly,alerts`)
+     .then(res => res.json())
+     .then(weather => console.log(weather.daily.data.tem));
+    // return newActivity.save()
+    // .then(() => 201);
   }
   catch(e) {
     return 400;

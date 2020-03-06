@@ -23,6 +23,7 @@ const activitySchema = new mongoose.Schema({
   lat: Number,
   lng: Number,
   timezone: Number,
+  weather: {summary: String, icon: String, sunriseTime: Number, sunsetTime: Number, temperatureMin: Number, temperatureMax: Number, windSpeed: Number, windBearing: Number}
 })
 
 const activityModel = mongoose.model('activity', activitySchema);
