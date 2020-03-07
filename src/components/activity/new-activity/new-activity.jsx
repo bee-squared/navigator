@@ -108,7 +108,6 @@ class NewActivity extends React.Component {
       lng,
     } = this.state;
     const url = process.env.REACT_APP_REST_API_LOCATION;
-    const port = process.env.REACT_APP_API_PORT;
     const accessKey = process.env.REACT_APP_API_UNSPLASH_ACCESS_KEY;
 
     const data = {
@@ -130,7 +129,7 @@ class NewActivity extends React.Component {
       .then((data) => data.urls.regular)
       .then((imageUrl) => data.photo = imageUrl)
       .then(() => {
-        fetch(`${url}${port}/addActivity`, {
+        fetch(`${url}/addActivity`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
