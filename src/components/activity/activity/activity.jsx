@@ -53,7 +53,6 @@ class Activity extends React.Component {
           displayIcon = 'partly-cloudy-day'
       }
     }
-    console.log('the icon type: ', displayIcon)
 
     return (
       <div className="activityContainer">

@@ -61,7 +61,7 @@ class ActivityStream extends React.Component {
           </div>
         </section>
         <aside className="asideRight">
-          <div className="activityColumnHeader">Find a Route</div>
+          <div className="activityColumnHeader">Get Recommendations</div>
           <Recommendations getRecommendations={this.getRecommendations} handleClear={this.handleClear}/>
         </aside>
       </div>

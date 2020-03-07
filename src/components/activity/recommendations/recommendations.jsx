@@ -85,6 +85,8 @@ class Recommendations extends React.Component {
     const { toggleRecommendations } = this.state;
     return (
       <div className="recommendationsContainer">
+        <div className="goalHeader">What are your goals?</div>
+        <div className="goalHelperText">Add goals to get activity/route recommendations</div>
         <form className="recommendationsForm" onSubmit={this.handleSubmit}>
           <div className="inputGoalTitle">Sport</div>
           <div className="goalInputDropdown">

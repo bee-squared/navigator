@@ -40,7 +40,6 @@ const getRecommendations = function(queryParams) {
     if (queryParams.location) {
       queryParams.location = { $regex: queryParams.location, $options: 'i' }
     }
-    console.log(queryParams)
     return db.activityModel.find(queryParams)
   }
   catch(e) {
@@ -50,7 +49,6 @@ const getRecommendations = function(queryParams) {
 
 const addActivity = function(activity) {
   try {
-    console.log(activity.date)
     fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T14:00:00Z?exclude=currently,minutely,hourly,alerts`)
     .then(res => res.json())
     .then(weatherData => weatherData.daily.data[0])
