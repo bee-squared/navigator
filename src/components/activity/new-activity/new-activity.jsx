@@ -6,7 +6,6 @@ import { Map, TileLayer, Marker, Popup } from 'react-leaflet';
 import PlacesAutocomplete from 'react-places-autocomplete';
 import {
   geocodeByAddress,
-  geocodeByPlaceId,
   getLatLng,
 } from 'react-places-autocomplete';
 
@@ -87,7 +86,7 @@ class NewActivity extends React.Component {
   }
 
   exitNewActivity = () => {
-    window.location = `/dashboard`;
+    window.location = `${process.env.REACT_APP_URL}/dashboard`;
   }
 
 

@@ -2,7 +2,6 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Button from '@material-ui/core/Button';
 import IconButton from '@material-ui/core/IconButton';
 import MenuIcon from '@material-ui/icons/Menu';
 import './navbar.scss';
@@ -46,14 +45,19 @@ function Navbar(props) {
 
   function handleClick(e) {
     e.preventDefault();
-    window.location = `/activity/new`;
+    window.location = `${process.env.REACT_APP_URL}/activity/new`;
+  }
+
+  function handleMenuClick(e) {
+    e.preventDefault();
+    window.location = `${process.env.REACT_APP_URL}/`;
   }
 
   return (
     <div className={classes.root}>
       <AppBar className={classes.app} position="static">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} aria-label="menu">
+          <IconButton edge="start" className={classes.menuButton} aria-label="menu" onClick={handleMenuClick}>
             <MenuIcon />
           </IconButton>
           <div>

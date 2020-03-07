@@ -1,5 +1,4 @@
-  import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react';
 
 class Profile extends React.Component {
   constructor(props) {
