@@ -1,21 +1,22 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import Moment from 'moment';
-import './activity.scss';
 import '../../../library/weather-icons-master/css/weather-icons.css'
+import './activity.scss';
 
 
 class Activity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
+      weatherIcon: 'wi-day-sunny',
     }
   }
 
-  render () {
+  componentDidMount() {
     const { activity } = this.props;
     let displayIcon;
+
     if (activity.weather) {
       const { icon } = activity.weather;
       switch (icon) {
@@ -53,7 +54,13 @@ class Activity extends React.Component {
           displayIcon = 'partly-cloudy-day'
       }
     }
+    this.setState({ weatherIcon: displayIcon })
+  }
 
+  render () {
+    const { weatherIcon } = this.state;
+    const { activity } = this.props;
+    console.log(weatherIcon)
     return (
       <div className="activityContainer">
         <div className="activityHeaderContainer">
@@ -101,11 +108,8 @@ class Activity extends React.Component {
           { activity.weather ? ((activity.weather.temperatureMax + activity.weather.temperatureMin) / 2).toFixed(1) : null }
           { activity.weather ? String.fromCharCode(176) : null }
           { activity.weather ? 'F  ' : null }
-          { activity.weather ? <i class="wi wi-night-sleet"></i> : null}
+          { activity.weather ? <i class={`wi ${weatherIcon}`}></i> : null}
 
-          {
-            // if (activity.weather.icon)
-          }
         </div>
       </div>
     );
