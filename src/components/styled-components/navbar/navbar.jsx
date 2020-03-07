@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
     width: '100vw',
   },
   app: {
-    background: '#d9d9d9',
+    background: '#336699',
     color: '#336699',
     height: 75,
   },
@@ -39,22 +39,6 @@ const useStyles = makeStyles(theme => ({
     textDecoration  : 'none',
     border: '1px black',
   },
-  addButton: {
-    marginTop: '10px',
-    color: '#ffffff',
-    backgroundColor: '#336699',
-    '&:hover': {
-      backgroundColor: '#336699',
-      borderColor: '#0062cc',
-      boxShadow: 'none',
-      opacity: .8,
-      color: '#ffffff',
-    },
-    '&:focus': {
-      boxShadow: '0 0 0 0.2rem rgba(51,102,153,.5)',
-    },
-    justifyConent: 'flex-end',
-  },
 }));
 
 function Navbar(props) {
@@ -76,7 +60,8 @@ function Navbar(props) {
             <a className="homeLink" href="/">Navigator</a>
           </div>
           <div className="toolbarButton">
-            <Button className={classes.addButton} onClick={handleClick}>Add Activity</Button>
+            <button className="addButton" onClick={handleClick}>Add Activity</button>
+            {/* <Button className={classes.addButton} onClick={handleClick}>Add Activity</Button> */}
           </div>
         </Toolbar>
       </AppBar>

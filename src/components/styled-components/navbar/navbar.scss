@@ -1,9 +1,9 @@
 .homeLink {
   flex-grow: 1;
   padding-top: 10px;
-  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family: interstate, sans-serif;
   font-size: 2.8em;
-  color: #336699;
+  color: white;
   text-decoration: none;
   display: block;
 }
@@ -16,4 +16,25 @@
   display: flex;
   flex-grow: 1;
   justify-content: flex-end;
+}
+
+.addButton {
+  margin-top: 10px;
+  color: #ffffff;
+}
+
+.addButton {
+  font-family: interstate, sans-serif;
+  color: white;
+  display: inline-block;
+  margin-left: 15px;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-size: 1.2em;
+  background-color: #336699;
+  &:hover {
+    cursor: pointer;
+    color: lightgray;
+  }
 }

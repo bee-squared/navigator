@@ -48,6 +48,10 @@ class NewActivity extends React.Component {
     geocodeByAddress(address)
       .then(results => getLatLng(results[0]))
       .then(latLng => this.setState({ lat: latLng.lat, lng: latLng.lng, location: address }))
+      .then(() => {
+        let formLocation = document.getElementById('locationInput');
+        formLocation.value = this.state.location;
+      })
       .catch(error => console.error('Error', error));
 
   };
@@ -170,6 +174,7 @@ class NewActivity extends React.Component {
                         placeholder: 'Search Places ...',
                         className: 'textInput',
                         name: 'location',
+                        id: 'locationInput'
                       })}
                   />
                   <div className="autocomplete-dropdown-container">
