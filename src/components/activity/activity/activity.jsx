@@ -60,7 +60,6 @@ class Activity extends React.Component {
   render () {
     const { weatherIcon } = this.state;
     const { activity } = this.props;
-    console.log(weatherIcon)
     return (
       <div className="activityContainer">
         <div className="activityHeaderContainer">
@@ -102,14 +101,33 @@ class Activity extends React.Component {
                 <img className="activityImage" src={activity.photo} alt="activity"/>}
           </div>
         </div>
-        <div className="activityWeather">
-
-          { activity.weather ? 'Average Temperature: ' : null }
-          { activity.weather ? ((activity.weather.temperatureMax + activity.weather.temperatureMin) / 2).toFixed(1) : null }
-          { activity.weather ? String.fromCharCode(176) : null }
-          { activity.weather ? 'F  ' : null }
-          { activity.weather ? <i class={`wi ${weatherIcon}`}></i> : null}
-
+        <div className="activityWeatherContainer">
+          <div className="activityWeather">
+            { activity.weather ? 'Avg Temperature: ' : null }
+            { activity.weather
+              ?
+                <span>
+                  {((activity.weather.temperatureMax + activity.weather.temperatureMin) / 2).toFixed(1)}
+                </span>
+              :
+                null
+            }
+            { activity.weather ? String.fromCharCode(176) : null }
+            { activity.weather ? 'F  ' : null }
+            { activity.weather ? <i class={`wi ${weatherIcon}`}></i> : null}
+            { activity.weather ?
+              <div className="poweredBy">
+                <a href="https://darksky.net/poweredby/">Powered by Darksky</a>
+              </div> : null}
+          </div>
+            { activity.weather
+              ?
+                <div className="weatherSummary">
+                  {activity.weather.summary}
+                </div>
+              :
+                null
+            }
         </div>
       </div>
     );

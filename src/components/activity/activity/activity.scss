@@ -96,6 +96,24 @@
   margin-left: -2px;
 }
 
+.activityWeatherContainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 .activityWeather {
-  margin: 10px 15px 10px;
+  display: inline-block;
+  margin: 10px 0px 10px 10px;
+  width: 50%;
+}
+
+.weatherSummary {
+  text-align: end;
+  margin: 10px 10px 0px 0px;
+}
+
+.mainWeather {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 }
