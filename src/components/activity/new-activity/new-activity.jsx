@@ -145,7 +145,10 @@ class NewActivity extends React.Component {
 
     return (
       <div className="newActivityContainer">
-        <div className="newActivityPageHeader">Add a New Activity</div>
+        <div className="pageHeaderContainer">
+          <div className="newActivityPageHeader">Add a New Activity</div>
+          <button type="text" className="cancelButtonHeader" onClick={this.exitNewActivity}>Cancel</button>
+        </div>
         <div className="newActivityBody">
           <Map className="map" center={position} zoom={this.state.zoom} onClick={this.addMarker}>
             <TileLayer
