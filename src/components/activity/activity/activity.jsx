@@ -19,25 +19,41 @@ class Activity extends React.Component {
     if (activity.weather) {
       const { icon } = activity.weather;
       switch (icon) {
-        case 'clear-day ':
+        case 'clear-day':
           displayIcon = 'wi-day-sunny';
-          break
+          break;
+        case 'clear-night':
+          displayIcon = 'wi-night-clear';
+          break;
+        case 'partly-cloudy-day':
+          displayIcon = 'wi-day-cloudy-high';
+          break;
+        case 'partly-cloudy-night':
+          displayIcon = 'night-alt-partly-cloudy';
+          break;
+        case 'cloudy':
+          displayIcon = 'wi-day-cloudy-high';
+          break;
+        case 'rain':
+          displayIcon = 'wi-day-rain';
+          break;
+        case 'sleet':
+          displayIcon = 'wi-day-sleet';
+          break;
+        case 'snow':
+          displayIcon = 'wi-day-snow';
+          break;
+        case 'wind':
+          displayIcon = 'wi-day-windy';
+          break;
+        case 'fog':
+          displayIcon = 'wi-fog';
+          break;
         default:
           displayIcon = 'partly-cloudy-day'
       }
     }
     console.log('the icon type: ', displayIcon)
-
-// clear-day
-// clear-night
-// partly-cloudy-day
-// partly-cloudy-night
-// cloudy
-// rain
-// sleet
-// snow
-// wind
-// fog
 
     return (
       <div className="activityContainer">
