@@ -13,7 +13,8 @@ class ActivityStream extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_REST_API_LOCATION}/allActivities`)
+    console.log(process.env.REACT_APP_SERVER)
+    fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
       .then((results) => results.json())
       .then((activityList) => this.setState({ activityList }));
   }
@@ -29,13 +30,13 @@ class ActivityStream extends React.Component {
       queryParams += `&${Object.entries(params)[i][0]}=${Object.entries(params)[i][1]}`;
     }
 
-    fetch(`${process.env.REACT_APP_REST_API_LOCATION}/recommendations${queryParams}`)
+    fetch(`${process.env.REACT_APP_SERVER}/recommendations${queryParams}`)
       .then((results) => results.json())
       .then((activityList) => this.setState({ activityList }));
   }
 
   handleClear = (e) => {
-    fetch(`${process.env.REACT_APP_REST_API_LOCATION}/allActivities`)
+    fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
       .then((results) => results.json())
       .then((activityList) => this.setState({ activityList }));
   }

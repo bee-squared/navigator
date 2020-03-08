@@ -106,7 +106,7 @@ class NewActivity extends React.Component {
       lat,
       lng,
     } = this.state;
-    const url = process.env.REACT_APP_REST_API_LOCATION;
+    const url = process.env.MONGODB_URI;
     const accessKey = process.env.REACT_APP_API_UNSPLASH_ACCESS_KEY;
 
     const data = {

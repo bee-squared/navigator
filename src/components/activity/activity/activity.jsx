@@ -114,7 +114,7 @@ class Activity extends React.Component {
             }
             { activity.weather ? String.fromCharCode(176) : null }
             { activity.weather ? 'F  ' : null }
-            { activity.weather ? <i class={`wi ${weatherIcon}`}></i> : null}
+            { activity.weather ? <i className={`wi ${weatherIcon}`}></i> : null}
             { activity.weather ?
               <div className="poweredBy">
                 <a href="https://darksky.net/poweredby/">Powered by Darksky</a>

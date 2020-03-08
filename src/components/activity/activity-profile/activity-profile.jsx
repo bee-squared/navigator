@@ -13,7 +13,9 @@ class ActivityProfile extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_REST_API_LOCATION}/activeDays`)
+    console.log('testing')
+    console.log('the server address: ', process.env.REACT_APP_SERVER)
+    fetch(`${process.env.REACT_APP_SERVER}/activeDays`)
     .then((results) => results.json())
     .then((activeDays) => this.setState({ activeDays }));
   }
@@ -24,6 +26,7 @@ class ActivityProfile extends React.Component {
 
     return (
       <div className="activityProfileContainer">
+        {console.log("is this getting accessed?")}
         <div className="profileHeaderContainer">
           <div className="avatarContainer">
             <ImageAvatar url={`${process.env.REACT_APP_PHOTOS}/navigator/profile_gswemr.jpg`}/>
