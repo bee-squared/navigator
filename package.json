@@ -29,7 +29,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server-dev": "nodemon server/app.js",
-    "server-prod": "node server/app.js"
+    "server-prod": "node server/app.js",
+    "heroku-postbuild": "npm run server-prod && npm start"
   },
   "eslintConfig": {
     "extends": "react-app"
