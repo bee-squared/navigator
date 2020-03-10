@@ -1,10 +1,11 @@
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const cors = require('cors');
-const port = 3001;
 const routes = require('./routes.js');
-require('dotenv').config();
+
+const port = process.env.REACT_APP_API_PORT;
 
 const app = express();
 

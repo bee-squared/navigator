@@ -13,7 +13,7 @@ class ActivityProfile extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`${process.env.REACT_APP_SERVER}/activeDays`)
+    fetch(`${process.env.REACT_APP_SERVER}/activeDays`)   
     .then((results) => results.json())
     .then((activeDays) => this.setState({ activeDays }));
   }
