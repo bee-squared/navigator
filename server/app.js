@@ -12,6 +12,6 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.use('/', routes);
-app.use(express.static('public'));
+app.use(express.static('public/'));
 
 app.listen(PORT, () => {console.log(`The server is up and running on port: ${PORT}`)});
