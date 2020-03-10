@@ -4,7 +4,6 @@ const bodyParser = require('body-parser');
 const db = require('../database/index.js');
 const cors = require('cors');
 const routes = require('./routes.js');
-
 const PORT = process.env.PORT || 3000;
 
 const app = express();
