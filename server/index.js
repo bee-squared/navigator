@@ -5,7 +5,7 @@ const db = require('../database/index.js');
 const cors = require('cors');
 const routes = require('./routes.js');
 
-const port = process.env.REACT_APP_API_PORT;
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
@@ -14,4 +14,4 @@ app.use(bodyParser.json());
 
 app.use('/', routes);
 
-app.listen(port, () => {console.log(`The server is up and running on port: ${port}`)});
+app.listen(PORT, () => {console.log(`The server is up and running on port: ${PORT}`)});
