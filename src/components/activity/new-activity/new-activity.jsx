@@ -86,14 +86,10 @@ class NewActivity extends React.Component {
   }
 
   exitNewActivity = () => {
-    console.log("testing")
-    console.log(`dashboard: ${process.env.REACT_APP_URL}/dashboard`)
     window.location = `${process.env.REACT_APP_URL}/dashboard`;
   }
 
-
-
-  addActivity = (e) => {
+  addActivity = async (e) => {
     const {
       title,
       description,
@@ -126,20 +122,18 @@ class NewActivity extends React.Component {
       lng,
       photo,
     }
-    // fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}`)
-    //   .then((results) => results.json())
-    //   .then((data) => data.urls.regular)
-    //   .then((imageUrl) => data.photo = imageUrl)
-    //   .then(() => {
-    this.exitNewActivity();
 
-    fetch(`${url}/addActivity`, {
+    let postAndClose = async () => {
+      fetch(`${url}/addActivity`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data),
-    })
+    })}
+    postAndClose().then(() => this.exitNewActivity())
+
+
   }
 
   render () {
