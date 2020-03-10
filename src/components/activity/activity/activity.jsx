@@ -87,20 +87,26 @@ class Activity extends React.Component {
             <div className="activityDetail">{`${activity.duration_hours}h ${activity.duration_minutes}m`}</div>
           </div>
         </div>
-        <div className="activityImageContainer">
-          <div className={
-            activity.photo.includes('google')
+          {
+            activity.photo
               ?
-                'activityImageContainerInsideMap'
+                <div className="activityImageContainer">
+                  <div className={
+                    activity.photo.includes('google')
+                      ?
+                        'activityImageContainerInsideMap'
+                      :
+                        'activityImageContainerInside'}>
+                    {activity.photo.includes('google')
+                      ?
+                        <iframe title="routeMap" className="routeMap" src={`${activity.photo}&zoom=8`}></iframe>
+                      :
+                        <img className="activityImage" src={activity.photo} alt="activity"/>}
+                  </div>
+                </div>
               :
-                'activityImageContainerInside'}>
-            {activity.photo.includes('google')
-              ?
-                <iframe title="routeMap" className="routeMap" src={`${activity.photo}&zoom=8`}></iframe>
-              :
-                <img className="activityImage" src={activity.photo} alt="activity"/>}
-          </div>
-        </div>
+                null
+          }
         <div className="activityWeatherContainer">
           <div className="activityWeather">
             { activity.weather ? 'Avg Temperature: ' : null }

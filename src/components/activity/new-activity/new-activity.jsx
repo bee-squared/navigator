@@ -86,6 +86,8 @@ class NewActivity extends React.Component {
   }
 
   exitNewActivity = () => {
+    console.log("testing")
+    console.log(`dashboard: ${process.env.REACT_APP_URL}/dashboard`)
     window.location = `${process.env.REACT_APP_URL}/dashboard`;
   }
 
@@ -105,9 +107,9 @@ class NewActivity extends React.Component {
       rating,
       lat,
       lng,
+      photo,
     } = this.state;
-    const url = process.env.MONGODB_URI;
-    const accessKey = process.env.REACT_APP_API_UNSPLASH_ACCESS_KEY;
+    const url = process.env.REACT_APP_SERVER;
 
     const data = {
       title,
@@ -122,21 +124,22 @@ class NewActivity extends React.Component {
       rating,
       lat,
       lng,
+      photo,
     }
-    fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}`)
-      .then((results) => results.json())
-      .then((data) => data.urls.regular)
-      .then((imageUrl) => data.photo = imageUrl)
-      .then(() => {
-        fetch(`${url}/addActivity`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(data),
-        })
-      })
-      .then(() => this.exitNewActivity())
+    // fetch(`https://api.unsplash.com/photos/random?client_id=${accessKey}`)
+    //   .then((results) => results.json())
+    //   .then((data) => data.urls.regular)
+    //   .then((imageUrl) => data.photo = imageUrl)
+    //   .then(() => {
+    this.exitNewActivity();
+
+    fetch(`${url}/addActivity`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
   }
 
   render () {
@@ -169,7 +172,7 @@ class NewActivity extends React.Component {
             >
                 {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
                   <div>
-                    <div className="inputHeader">Location</div>
+                    <div required className="inputHeader">Location</div>
                     <input
                       {...getInputProps({
                         placeholder: 'Search Places ...',
@@ -250,6 +253,10 @@ class NewActivity extends React.Component {
               <option className="ratingOption" value="2">2 - Just Okay</option>
               <option className="ratingOption" value="1">1 - Never Again</option>
             </select>
+            <div className="photoContainer">
+                <div className="inputHeader">Photo/Map Url</div>
+                <input className="textInput" type="text" name="photo" onChange={this.handleChange}/>
+              </div>
           </form>
           <div className="buttonContainer">
             <ConfirmButton name={'Create'} function={this.addActivity}/>

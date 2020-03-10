@@ -49,6 +49,7 @@ const getRecommendations = function(queryParams) {
 
 const addActivity = function(activity) {
   try {
+    console.log(activity)
     fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T14:00:00Z?exclude=currently,minutely,hourly,alerts`)
     .then(res => res.json())
     .then(weatherData => weatherData.daily.data[0])
