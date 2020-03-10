@@ -50,5 +50,5 @@
     "node": "12.12.0",
     "npm": "6.14.1"
   },
-  "homepage": "."
+  "homepage": "src/."
 }
