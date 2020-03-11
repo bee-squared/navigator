@@ -25,12 +25,12 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build": "react-scripts build", // use this to run my build
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server-dev": "nodemon server/app.js",
     "server-prod": "node server/app.js",
-    "heroku-postbuild": "npm run server-prod && npm start"
+    "heroku-postbuild": "npm run build && npm run server-prod"
   },
   "eslintConfig": {
     "extends": "react-app"
