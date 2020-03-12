@@ -105,7 +105,8 @@ class NewActivity extends React.Component {
       lng,
       photo,
     } = this.state;
-    const url = process.env.REACT_APP_SERVER;
+
+    // const url = process.env.REACT_APP_SERVER;
 
     const data = {
       title,
@@ -124,7 +125,8 @@ class NewActivity extends React.Component {
     }
 
     let postAndClose = async () => {
-      fetch(`${url}/addActivity`, {
+      // fetch(`${url}/addActivity`, {
+      fetch(`/addActivity`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
