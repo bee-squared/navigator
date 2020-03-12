@@ -11,7 +11,7 @@ router.get('/allActivities', function (req, res) {
 })
 
 router.get('/activity', function (req, res) {
-  res.send("route is working");
+  res.send("this route will return a single activity - check back soon");
     // .then((results) => res.status(200).send(results))
 })
 
@@ -30,7 +30,7 @@ router.get('/recommendations', function(req, res) {
 /* --------------------- Add --------------------- */
 router.post('/addActivity', (req, res) => {
   activity.addActivity(req.body)
-    // .then((results) => res.sendStatus(results));
+    .then((results) => res.sendStatus(results));
 })
 
 /* --------------------- Delete --------------------- */
@@ -41,7 +41,7 @@ router.post('/addActivity', (req, res) => {
 
 // Handles any requests that don't match the ones above
 router.get('*', (req,res) =>{
-	res.sendFile(path.join(__dirname+'/build/index.html'));
+	res.sendFile(path.join(__dirname+'/../build/index.html'));
 });
 
 module.exports = router;
