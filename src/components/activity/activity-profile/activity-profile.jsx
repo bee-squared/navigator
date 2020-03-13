@@ -3,6 +3,7 @@ import Moment from 'moment';
 import './activity-profile.scss';
 import ImageAvatar from '../../styled-components/image-avatar/image-avatar'
 import propTypes from 'prop-types';
+import { positions } from '@material-ui/system';
 
 class ActivityProfile extends React.Component {
   constructor(props) {
@@ -27,7 +28,9 @@ class ActivityProfile extends React.Component {
       <div className="activityProfileContainer">
         <div className="profileHeaderContainer">
           <div className="avatarContainer">
-            <ImageAvatar url={`${process.env.REACT_APP_PHOTOS}/navigator/profile_gswemr.jpg`}/>
+            <div className="userAvatar">
+              <ImageAvatar url={`${process.env.REACT_APP_PHOTOS}/navigator/profile_gswemr.jpg`}/>
+            </div>
           </div>
           <div className="userNameLocationContainer">
             <div className="userFullName">
