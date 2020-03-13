@@ -45,12 +45,14 @@ function Navbar(props) {
 
   function handleClick(e) {
     e.preventDefault();
-    window.location = `${process.env.REACT_APP_URL}/activity/new`;
+    // window.location = `${process.env.REACT_APP_URL}/activity/new`;
+    window.location = `/activity/new`;
   }
 
   function handleMenuClick(e) {
     e.preventDefault();
-    window.location = `${process.env.REACT_APP_URL}/`;
+    // window.location = `${process.env.REACT_APP_URL}/`;
+    window.location = `/`;
   }
 
   return (

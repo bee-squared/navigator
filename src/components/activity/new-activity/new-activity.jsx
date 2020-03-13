@@ -86,7 +86,8 @@ class NewActivity extends React.Component {
   }
 
   exitNewActivity = () => {
-    window.location = `${process.env.REACT_APP_URL}/dashboard`;
+    // window.location = `${process.env.REACT_APP_URL}/dashboard`;
+    window.location = `/dashboard`;
   }
 
   addActivity = async (e) => {
