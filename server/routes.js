@@ -40,7 +40,7 @@ router.post('/addActivity', (req, res) => {
 // })
 
 // Handles any requests that don't match the ones above
-router.get('*', (req,res) =>{
+router.get('/*', (req,res) =>{
 	res.sendFile(path.join(__dirname+'/../build/index.html'));
 });
 
