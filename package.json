@@ -30,7 +30,7 @@
     "eject": "react-scripts eject",
     "server-dev": "nodemon server/app.js",
     "server-prod": "node server/app.js",
-    "heroku-postbuild": "npm run build && npm run server-prod"
+    "postinstall": "npm run build && npm run server-prod"
   },
   "eslintConfig": {
     "extends": "react-app"
