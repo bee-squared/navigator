@@ -57,8 +57,7 @@ const addActivity = function(activity) {
       const newActivity = new db.activityModel(activity);
       return newActivity;
      })
-    .then((newActivity) => newActivity.save())
-    .then(() => 201);
+    .then((newActivity) => newActivity.save());
   }
   catch(e) {
     return 400;

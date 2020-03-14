@@ -30,7 +30,7 @@ router.get('/recommendations', function(req, res) {
 /* --------------------- Add --------------------- */
 router.post('/addActivity', (req, res) => {
   activity.addActivity(req.body)
-    .then((results) => res.sendStatus(results));
+    .then(() => res.sendStatus(201));
 })
 
 /* --------------------- Delete --------------------- */
