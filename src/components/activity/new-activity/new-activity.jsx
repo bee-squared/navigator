@@ -133,7 +133,6 @@ class NewActivity extends React.Component {
           },
           body: JSON.stringify(data),
         })
-        postAndClose().then(() => this.exitNewActivity());
       } else {
         fetch(`${localServer}/addActivity`, {
           method: 'POST',
@@ -142,9 +141,11 @@ class NewActivity extends React.Component {
           },
           body: JSON.stringify(data),
         })
-        postAndClose().then(() => this.exitNewActivity());
       }
     }
+    
+    postAndClose()
+      .then(() => this.exitNewActivity());
 
   }
 
