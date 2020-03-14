@@ -14,10 +14,16 @@ class ActivityProfile extends React.Component {
   }
 
   componentDidMount() {
-    // fetch(`${process.env.REACT_APP_SERVER}/activeDays`)
-    fetch(`/activeDays`)
-    .then((results) => results.json())
-    .then((activeDays) => this.setState({ activeDays }));
+    // use NODE_ENV heroku production environment variable to evaluate environment
+    if (process.env.NODE_ENV === 'production') {
+      fetch(`/activeDays`)
+      .then((results) => results.json())
+      .then((activeDays) => this.setState({ activeDays }));
+    } else {
+      fetch(`${process.env.REACT_APP_SERVER}/activeDays`)
+        .then((results) => results.json())
+        .then((activeDays) => this.setState({ activeDays }));
+    }
   }
 
   render () {

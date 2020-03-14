@@ -39,7 +39,7 @@ router.post('/addActivity', (req, res) => {
 //     // .then((results) => res.status(200).send(results))
 // })
 
-// Handles any requests that don't match the ones above
+// Handles any requests that don't match the ones above. This allows react router to manage the client side routing.
 router.get('/*', (req,res) =>{
 	res.sendFile(path.join(__dirname+'/../build/index.html'), function(err) {
     if (err) {

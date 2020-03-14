@@ -13,10 +13,16 @@ class ActivityStream extends React.Component {
   }
 
   componentDidMount() {
-    // fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
-    fetch('/allActivities')
-      .then((results) => results.json())
-      .then((activityList) => this.setState({ activityList }));
+    // use NODE_ENV heroku production environment variable to evaluate environment
+    if (process.env.NODE_ENV === 'production') {
+      fetch('/allActivities')
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    } else {
+      fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    }
   }
 
   getRecommendations = (params) => {
@@ -30,17 +36,30 @@ class ActivityStream extends React.Component {
       queryParams += `&${Object.entries(params)[i][0]}=${Object.entries(params)[i][1]}`;
     }
 
-    // fetch(`${process.env.REACT_APP_SERVER}/recommendations${queryParams}`)
-    fetch(`/recommendations${queryParams}`)
-      .then((results) => results.json())
-      .then((activityList) => this.setState({ activityList }));
+    // use NODE_ENV heroku production environment variable to evaluate environment
+    if (process.env.NODE_ENV === 'production') {
+      fetch(`/recommendations${queryParams}`)
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    } else {
+      fetch(`${process.env.REACT_APP_SERVER}/recommendations${queryParams}`)
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    }
   }
 
   handleClear = (e) => {
-    // fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
-    fetch(`/allActivities`)
-      .then((results) => results.json())
-      .then((activityList) => this.setState({ activityList }));
+    // use NODE_ENV heroku production environment variable to evaluate environment
+    if (process.env.NODE_ENV === 'production') {
+      fetch(`/allActivities`)
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    } else {
+      fetch(`${process.env.REACT_APP_SERVER}/allActivities`)
+        .then((results) => results.json())
+        .then((activityList) => this.setState({ activityList }));
+    }
+
   }
 
   render () {
