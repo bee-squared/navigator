@@ -41,7 +41,11 @@ router.post('/addActivity', (req, res) => {
 
 // Handles any requests that don't match the ones above
 router.get('/*', (req,res) =>{
-	res.sendFile(path.join(__dirname+'/../build/index.html'));
+	res.sendFile(path.join(__dirname+'/../build/index.html'), function(err) {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
 });
 
 module.exports = router;
