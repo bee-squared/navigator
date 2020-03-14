@@ -86,7 +86,6 @@ class NewActivity extends React.Component {
   }
 
   exitNewActivity = () => {
-    // window.location = `${process.env.REACT_APP_URL}/dashboard`;
     window.location = `/dashboard`;
   }
 
@@ -107,7 +106,7 @@ class NewActivity extends React.Component {
       photo,
     } = this.state;
 
-    // const url = process.env.REACT_APP_SERVER;
+    const localServer = process.env.REACT_APP_SERVER;
 
     const data = {
       title,
@@ -126,16 +125,26 @@ class NewActivity extends React.Component {
     }
 
     let postAndClose = async () => {
-      // fetch(`${url}/addActivity`, {
-      fetch(`/addActivity`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
-    })}
-    postAndClose().then(() => this.exitNewActivity())
-
+      if (process.env.NODE_ENV === 'production') {
+        fetch(`/addActivity`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        postAndClose().then(() => this.exitNewActivity());
+      } else {
+        fetch(`${localServer}/addActivity`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data),
+        })
+        postAndClose().then(() => this.exitNewActivity());
+      }
+    }
 
   }
 
@@ -184,7 +193,6 @@ class NewActivity extends React.Component {
                       const className = suggestion.active
                         ? 'suggestion-item--active'
                         : 'suggestion-item';
-                      // inline style for demonstration purpose
                       const style = suggestion.active
                         ? { backgroundColor: '#fafafa', cursor: 'pointer' }
                         : { backgroundColor: '#ffffff', cursor: 'pointer' };
