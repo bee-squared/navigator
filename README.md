@@ -56,32 +56,32 @@ $ npm start
 - [x] Get recommendations based on currently logged activities~~
 
 ### Version 1
-- [] Edit a selected activity
-- [] Delete a selected activity
-- [] Responsive design updates
+- [ ] Edit a selected activity
+- [ ] Delete a selected activity
+- [ ] Responsive design updates
 
 ### Version 2
-- [] Add basic charts of user's activities
-- [] Allow users to create an account
-- [] Add user profile image
+- [ ] Add basic charts of user's activities
+- [ ] Allow users to create an account
+- [ ] Add user profile image
 
 ### Version 3
-- [] Upload images to activities
+- [ ] Upload images to activities
 
 ### Version 4
-- [] Plan activities on a calendar
-- [] Upload GPX files
+- [ ] Plan activities on a calendar
+- [ ] Upload GPX files
 
 ### Version 5
-- [] Schedule activity from recommendations
-- [] Get recommendations based on crowd sourced routes
-- [] Plan activities based on recommended routes
+- [ ] Schedule activity from recommendations
+- [ ] Get recommendations based on crowd sourced routes
+- [ ] Plan activities based on recommended routes
 
 ### Version 6
-- [] Manage profile settings
-- [] Manage settings page
-- [] Create routes
-- [] Show 5 day forecast
+- [ ] Manage profile settings
+- [ ] Manage settings page
+- [ ] Create routes
+- [ ] Show 5 day forecast
 
 ## Authors
 Brian Bouchard
