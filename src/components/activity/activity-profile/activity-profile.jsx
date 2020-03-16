@@ -3,7 +3,6 @@ import Moment from 'moment';
 import './activity-profile.scss';
 import ImageAvatar from '../../styled-components/image-avatar/image-avatar'
 import propTypes from 'prop-types';
-import { positions } from '@material-ui/system';
 
 class ActivityProfile extends React.Component {
   constructor(props) {

@@ -49,7 +49,7 @@ const getRecommendations = function(queryParams) {
 
 const addActivity = function(activity) {
   try {
-    fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T14:00:00Z?exclude=currently,minutely,hourly,alerts`)
+    return fetch(`https://api.darksky.net/forecast/${process.env.REACT_APP_API_DARKSKY}/${activity.lat},${activity.lng},${activity.date}T14:00:00Z?exclude=currently,minutely,hourly,alerts`)
     .then(res => res.json())
     .then(weatherData => weatherData.daily.data[0])
     .then(weather => {
@@ -57,7 +57,8 @@ const addActivity = function(activity) {
       const newActivity = new db.activityModel(activity);
       return newActivity;
      })
-    .then((newActivity) => newActivity.save());
+    .then((newActivity) => newActivity.save())
+    .then(() => 201)
   }
   catch(e) {
     return 400;
