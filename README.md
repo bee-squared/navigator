@@ -50,7 +50,7 @@ $ npm start
 
 ## Roadmap
 ### MVP (Completed)
-- ~~~Add new activities~~
+- ~~Add new activities~~
 - ~~Display activity stream~~
 - ~~Show user profile~~
 - ~~Get recommendations based on currently logged activities~~
