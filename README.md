@@ -18,22 +18,27 @@ Visit: https://navigat.herokuapp.com
 #### Setup
 
 1. Navigate to the preferred local directory where your project will reside.
+
 2. Clone the following repository:
 ```
 https://github.com/bee-squared/navigator.git
 ```
+
 3. Navigate inside the root directory of the project './navigator/'
+
 4. Create a .env file and set up the following variables:
--MONGODB_URI=mongodb://localhost/navigator
--REACT_APP_SERVER = localhost:[port of your choice]
--PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
--REACT_APP_PHOTOS=[link to your profile photo]
--REACT_APP_API_DARKSKY=[link to your darksky api license key]
--REACT_APP_API_GOOGLE=[link ro your google api license key]
+- MONGODB_URI=mongodb://localhost/navigator
+- REACT_APP_SERVER = localhost:[port of your choice]
+- PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
+- REACT_APP_PHOTOS=[link to your profile photo]
+- REACT_APP_API_DARKSKY=[link to your darksky api license key]
+- REACT_APP_API_GOOGLE=[link ro your google api license key]
+
 5. Create a .gitignore file and include files you do not want to push to your public repo, such as:
 -.env
 -/node_modules
 -/build
+
 6. Run the following commands:
 ```
 $ npm install
