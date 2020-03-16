@@ -39,10 +39,14 @@ $ npm start
 - React Router
 - Sass
 - Dotenv
-- ExpressJS, Express Router
+- Node.js
+- Express.js, Express Router
 - Mongoose (MongoDB)
 - Google Maps API
 - Darksky Weather API
+
+## Deployed Using
+- [Heroku](https://www.heroku.com/home)
 
 ## Roadmap
 ### MVP (Completed)
