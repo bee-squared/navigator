@@ -75,6 +75,8 @@ $ npm start
 - [ ] Edit a selected activity
 - [ ] Delete a selected activity
 - [ ] Responsive design updates
+- [ ] Confirmation Toast Messages (on Add, Edit, Delete)
+- [ ] Form Validation
 
 ### Version 2
 
