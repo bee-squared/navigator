@@ -2,7 +2,7 @@
 Navigator is a web application that allows athletes to track their activities and get recommendations based on user goals.
 
 ## Production Build
-To see a live demo, visit: https://navigat.herokuapp.com
+To see a live demo, visit: [go](https://navigat.herokuapp.com){:target="_blank" rel="noopener"}
 
 ## Getting Started
 
@@ -35,3 +35,4 @@ Feature Requests
 - Manage settings page
 
 ## Authors
+Brian Bouchard
