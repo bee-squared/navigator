@@ -1,7 +1,12 @@
-###### Navigator
+# Navigator
 Navigator is a web application that allows athletes to track their activities and get recommendations based on user goals.
 
-### Technologies
+## Production Build
+To see a live demo, visit: https://navigat.herokuapp.com
+
+## Getting Started
+
+## Built With
 - ReactJS
 - React Router
 - Sass
@@ -11,7 +16,7 @@ Navigator is a web application that allows athletes to track their activities an
 - Google Maps API
 - Darksky Weather API
 
-### Roadmap
+## Roadmap
 MVP
 - Add new activities
 - Display activity stream
@@ -24,3 +29,9 @@ Feature Requests
 - Show 5 day forecast
 - Schedule activity from recommendations
 - Get recommendations based on crowd sourced routes
+- Plan activities on a calendar
+- Plan activities based on recommended routes
+- Manage profile settings
+- Manage settings page
+
+## Authors
