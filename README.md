@@ -27,13 +27,16 @@ MVP
 Feature Requests
 - Add basic charts of user's activities
 - Allow users to create an account
-- Show 5 day forecast
+- Add user profile image
+- Upload GPX files
 - Schedule activity from recommendations
 - Get recommendations based on crowd sourced routes
 - Plan activities on a calendar
 - Plan activities based on recommended routes
 - Manage profile settings
 - Manage settings page
+- Create routes
+- Show 5 day forecast
 
 ## Authors
 Brian Bouchard
