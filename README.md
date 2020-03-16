@@ -18,7 +18,7 @@ https://github.com/bee-squared/navigator.git
 3. Navigate inside the root directory of the project './navigator/'
 4. Create a .env file and set up the following variables:
 -MONGODB_URI=mongodb://localhost/navigator
--REACT_APP_SERVER=http://localhost:[port of your choice]
+-REACT_APP_SERVER = localhost:[port of your choice]
 -PORT=[port of your choice --> same port # as defined in the above REACT_APP_SERVER above]
 -REACT_APP_PHOTOS=[link to your profile photo]
 -REACT_APP_API_DARKSKY=[link to your darksky api license key]
@@ -50,38 +50,38 @@ $ npm start
 
 ## Roadmap
 ### MVP (Completed)
-- ~~Add new activities~~
-- ~~Display activity stream~~
-- ~~Show user profile~~
-- ~~Get recommendations based on currently logged activities~~
+- [x] Add new activities
+- [x] Display activity stream
+- [x] Show user profile
+- [x] Get recommendations based on currently logged activities~~
 
 ### Version 1
-- Edit a selected activity
-- Delete a selected activity
-- Responsive design updates
+- [] Edit a selected activity
+- [] Delete a selected activity
+- [] Responsive design updates
 
 ### Version 2
-- Add basic charts of user's activities
-- Allow users to create an account
-- Add user profile image
+- [] Add basic charts of user's activities
+- [] Allow users to create an account
+- [] Add user profile image
 
 ### Version 3
-- Upload images to activities
+- [] Upload images to activities
 
 ### Version 4
-- Plan activities on a calendar
-- Upload GPX files
+- [] Plan activities on a calendar
+- [] Upload GPX files
 
 ### Version 5
-- Schedule activity from recommendations
-- Get recommendations based on crowd sourced routes
-- Plan activities based on recommended routes
+- [] Schedule activity from recommendations
+- [] Get recommendations based on crowd sourced routes
+- [] Plan activities based on recommended routes
 
 ### Version 6
-- Manage profile settings
-- Manage settings page
-- Create routes
-- Show 5 day forecast
+- [] Manage profile settings
+- [] Manage settings page
+- [] Create routes
+- [] Show 5 day forecast
 
 ## Authors
 Brian Bouchard
