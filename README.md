@@ -35,9 +35,9 @@ https://github.com/bee-squared/navigator.git
 - REACT_APP_API_GOOGLE=[link ro your google api license key]
 
 5. Create a .gitignore file and include files you do not want to push to your public repo, such as:
--.env
--/node_modules
--/build
+- .env
+- /node_modules
+- /build
 
 6. Run the following commands:
 ```
