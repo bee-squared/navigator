@@ -10,8 +10,8 @@ router.get('/allActivities', function (req, res) {
    .then((results) => res.status(200).send(results));
 })
 
-router.get('/activity', function (req, res) {
-  res.send("this route will return a single activity - check back soon");
+router.get('/activity/:activityId', function (req, res) {
+  res.send(req.params.activityId);
     // .then((results) => res.status(200).send(results))
 })
 

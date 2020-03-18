@@ -63,6 +63,7 @@ class Activity extends React.Component {
     return (
       <div className="activityContainer">
         <div className="activityHeaderContainer">
+          <div className="activityId" hidden>{activity._id}</div>
           <div className="activityDate">
             { Moment(activity.date).format('MMMM Do YYYY') }
           </div>
