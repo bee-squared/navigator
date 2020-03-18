@@ -72,7 +72,7 @@ class Activity extends React.Component {
           </div>
         </div>
         <div className="activityTitle">
-          {activity.title}
+          <a id="activityTitle" href={`/activity/${activity._id}`}>{activity.title}</a>
         </div>
         <div className="activityDetailsContainer">
           <div className="distanceContainer">
