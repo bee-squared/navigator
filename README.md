@@ -68,7 +68,7 @@ $ npm start
 - [x] Add new activities
 - [x] Display activity stream
 - [x] Show user profile
-- [x] Get recommendations based on currently logged activities~~
+- [x] Get recommendations based on currently logged activities
 
 ### Version 1
 
