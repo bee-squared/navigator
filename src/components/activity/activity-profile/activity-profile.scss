@@ -54,14 +54,15 @@
 }
 
 .hometownTitle {
-  display: inline-block;
+  display: block;
   text-align: left;
   margin-right: 5px;
   font-size: 1.1em;
 }
 
 .hometown {
-  display: inline-block;
+  display: block;
+  text-align: left;
   font-size: 1.1em;
 }
 
@@ -78,7 +79,7 @@
 
 .profileStatTitle {
   display: inline-block;
-  font-weight: 600; 
+  font-weight: 600;
 }
 
 .profileStat {

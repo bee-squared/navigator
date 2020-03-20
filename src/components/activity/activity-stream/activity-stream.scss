@@ -55,5 +55,20 @@
   .mainSection{
     width: 100%;
   }
+}
+
+@media screen and (max-width: 400px) {
+  .asideLeft {
+    justify-self: center;
+    width: 100%;
+  }
+
+  .asideRight {
+    width: 100%;
+  }
+
+  .mainSection{
+    width: 100%;
+  }
 
 }
