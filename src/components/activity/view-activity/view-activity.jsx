@@ -17,7 +17,8 @@ class ViewActivity extends React.Component {
   render () {
     return (
       <div className="viewActivityContainer">
-        <div className="title">Title: </div>
+        Page Coming Soon
+        {/* <div className="title">Title: </div>
         <input required className="textInput" type="text" name="title"/>
         <div className="inputBlockContainer">
           <div className="sportContainer">
@@ -67,7 +68,7 @@ class ViewActivity extends React.Component {
         <div className="photoContainer">
             <div className="inputHeader">Photo/Map Url</div>
             <input className="textInput" type="text" name="photo"/>
-        </div>
+        </div> */}
       </div>
     );
   }

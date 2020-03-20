@@ -19,8 +19,6 @@
 
 .avatarContainer {
   display: flex;
-  // width: 35%;
-  // justify-content: flex-end;
   margin-right: 10px;
   padding-left: 20px;
   min-width: 100px;
@@ -80,7 +78,7 @@
 
 .profileStatTitle {
   display: inline-block;
-  // font-weight: 900;
+  font-weight: 600; 
 }
 
 .profileStat {
