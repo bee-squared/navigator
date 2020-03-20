@@ -13,14 +13,14 @@ class ViewActivity extends React.Component {
   }
 
   componentDidMount() {
+    const { match: { params } } = this.props;
 
   }
 
   render () {
-    const { match: { params } } = this.props;
     return (
       <div className="viewActivityContainer">
-        <div className="title">Title: {params.activityId}</div>
+        <div className="title">Title: </div>
         <input required className="textInput" type="text" name="title"/>
         <div className="inputBlockContainer">
           <div className="sportContainer">
