@@ -10,7 +10,7 @@ import Navbar from './components/styled-components/navbar/navbar';
 import ActivityStream from './components/activity/activity-stream/activity-stream';
 import Profile from './components/profile/profile';
 import NewActivity from './components/activity/new-activity/new-activity';
-import EditActivity from './components/activity/edit-activity/edit-activity';
+import ViewActivity from './components/activity/view-activity/view-activity';
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
             <NewActivity />
           </Route>
           <Route path='/activity/:activityId'>
-            <EditActivity />
+            <ViewActivity />
           </Route>
         </Switch>
         <footer></footer>
