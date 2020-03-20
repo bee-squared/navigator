@@ -4,12 +4,12 @@ import './view-activity.scss';
 function ViewActivity() {
   return (
     <div className="viewActivityContainer">
-      <div className="inputHeader">Title</div>
-      <input required className="textInput" type="text" name="title" onChange={this.handleChange}/>
+      <div className="title">Title</div>
+      <input required className="textInput" type="text" name="title"/>
       <div className="inputBlockContainer">
         <div className="sportContainer">
           <div className="inputSportHeader">Sport</div>
-            <select id="sport" className="DropDownInput" name="sport" onChange={this.handleChange}>
+            <select id="sport" className="DropDownInput" name="sport">
               <option value="none">Select a Sport</option>
               <option value="Climb">Climb</option>
               <option value="Hike">Hike</option>
@@ -20,30 +20,30 @@ function ViewActivity() {
         </div>
         <div className="dateContainer">
           <div className="inputHeader">Date</div>
-          <input required className="dateInput" type="date" name="date" onChange={this.handleChange}/>
+          <input required className="dateInput" type="date" name="date"/>
         </div>
       </div>
       <div className="inputBlockContainer">
         <div className="durationContainer">
           <div className="inputHeader">Duration</div>
           <div className="durationHoursMinutesContainer">
-            <input id="durationHours" className="textInput" type="text" name="duration_hours" placeholder="Hours" onChange={this.handleChange}/>
-            <input id="durationMinutes" className="textInput" type="text" name="duration_minutes" placeholder="Minutes" onChange={this.handleChange}/>
+            <input id="durationHours" className="textInput" type="text" name="duration_hours" placeholder="Hours"/>
+            <input id="durationMinutes" className="textInput" type="text" name="duration_minutes" placeholder="Minutes"/>
           </div>
         </div>
         <div className="distanceContainer">
           <div className="inputHeader">Distance</div>
-          <input className="textInput" type="text" name="distance" placeholder="Distance in miles" onChange={this.handleChange}/>
+          <input className="textInput" type="text" name="distance" placeholder="Distance in miles"/>
         </div>
         <div className="elevationContainer">
           <div className="inputHeader">Elevation</div>
-          <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles" onChange={this.handleChange}/>
+          <input className="textInput" type="text" name="elevation" placeholder="Elevation in miles"/>
         </div>
       </div>
       <div className="inputHeader">Description</div>
-      <textarea className="textAreaInput" type="text" name="description" onChange={this.handleChange}/>
+      <textarea className="textAreaInput" type="text" name="description"/>
       <div className="inputHeader">Rating</div>
-      <select id="activityRating" name="rating" onChange={this.handleChange}>
+      <select id="activityRating" name="rating">
         <option className="ratingOption" value="none">Select a Rating</option>
         <option className="ratingOption" value="5">5 - Glorious</option>
         <option className="ratingOption" value="4">4 - Memorable</option>
@@ -53,7 +53,7 @@ function ViewActivity() {
       </select>
       <div className="photoContainer">
           <div className="inputHeader">Photo/Map Url</div>
-          <input className="textInput" type="text" name="photo" onChange={this.handleChange}/>
+          <input className="textInput" type="text" name="photo"/>
       </div>
     </div>
   )
