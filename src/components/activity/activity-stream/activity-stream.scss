@@ -41,3 +41,19 @@
   background-color: white;
   border: 1px solid black;
 }
+
+@media screen and (max-width: 1000px) {
+  .asideLeft {
+    justify-self: center;
+    width: 50%;
+  }
+
+  .asideRight {
+    width: 100%;
+  }
+
+  .mainSection{
+    width: 100%;
+  }
+
+}
