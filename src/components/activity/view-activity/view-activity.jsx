@@ -1,8 +1,5 @@
 import React from 'react';
 import './view-activity.scss';
-import {
-
-} from "react-router-dom";
 
 class ViewActivity extends React.Component {
   constructor(props) {
