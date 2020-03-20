@@ -18,19 +18,22 @@
 
 .avatarContainer {
   display: flex;
-  min-width: 35%;
+  width: 35%;
   justify-content: flex-end;
-  margin-right: 5%;
+  margin-right: 10px;
   padding-left: 5%;
+  min-width: 100px;
 }
 
 .userAvatar {
   width: 100%;
+  min-width: 100px;
 }
 
 .userNameLocationContainer {
   display: flex;
-  min-width: 50%;
+  width: 65%;
+  min-width: 150px;
   flex-direction: column;
   align-content: flex-start;
   justify-content: center;
@@ -41,7 +44,6 @@
   display: inline-block;
   width: 100%;
   text-align: left;
-  // margin-left: 5%;
   min-width: 100px;
   font-size: 2.0em;
 }
@@ -49,7 +51,7 @@
 .hometownContainer {
   display: flex;
   justify-content: left;
-  margin: 5px 5px 0px;
+  margin: 5px 0px 0px;
   width: 100%;
 }
 
