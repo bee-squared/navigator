@@ -45,15 +45,18 @@
 @media screen and (max-width: 1024px) {
   .asideLeft {
     justify-self: center;
-    width: 55%;
+    width: 45%;
+    order: 0;
   }
 
   .asideRight {
-    width: 100%;
+    width: 45%;
+    order: 1;
   }
 
   .mainSection{
     width: 100%;
+    order: 2
   }
 }
 
