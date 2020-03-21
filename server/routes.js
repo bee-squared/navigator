@@ -10,10 +10,10 @@ router.get('/allActivities', function (req, res) {
    .then((results) => res.status(200).send(results));
 })
 
-router.get('/activity/:activityId', function (req, res) {
-  res.send(req.params.activityId);
+// router.get('/activity/:activityId', function (req, res) {
+//   res.send(req.params.activityId);
     // .then((results) => res.status(200).send(results))
-})
+// })
 
 router.get('/activeDays', function(req, res) {
   activity.getActiveDays()
