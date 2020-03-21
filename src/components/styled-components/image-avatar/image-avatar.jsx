@@ -9,9 +9,15 @@ const useStyles = makeStyles(theme => ({
       margin: theme.spacing(1),
     },
   },
-  large: {
+  size: {
     width: theme.spacing(12),
     height: theme.spacing(12),
+  },
+  '@media (max-width: 400px)': {
+    size: {
+      width: theme.spacing(8),
+      height: theme.spacing(8),
+    },
   },
 }));
 
@@ -20,7 +26,7 @@ export default function ImageAvatar(props) {
 
   return (
     <div className={classes.root}>
-      <Avatar id="userAvatar" alt="avatar" src={props.url} className={classes.large}/>
+      <Avatar id="userAvatar" alt="avatar" src={props.url} className={classes.size}/>
     </div>
   );
 }
