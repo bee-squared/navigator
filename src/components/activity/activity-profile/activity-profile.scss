@@ -21,20 +21,17 @@
   display: flex;
   margin-right: 10px;
   padding-left: 20px;
-  min-width: 100px;
-  max-width: 200px;
 }
 
 .userAvatar {
   width: 100%;
-  min-width: 100px;
   display: block;
 }
 
 .userNameLocationContainer {
   display: flex;
   min-width: 150px;
-  max-width: 95%;
+  // max-width: 95%;
   flex-direction: column;
   align-content: flex-start;
   justify-content: center;
@@ -92,10 +89,4 @@
 .dividerLine {
   border-bottom: 1px solid black;
   margin: 0px 10px 0px;
-}
-
-@media only screen and (max-width: 1024px) {
-  .MuiAvatar-root {
-    width: 10px;
-  }
 }
