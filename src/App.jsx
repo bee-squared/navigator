@@ -28,6 +28,7 @@ function App() {
           <Route path='/activity/new'>
             <NewActivity/>
           </Route>
+          <Route path='/activity' component={ViewActivity} />
           <Route path='/activity/:activityId' component={ViewActivity} />
         </Switch>
         <footer></footer>
