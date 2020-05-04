@@ -1,24 +1,13 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+
 import './view-activity.scss';
 
-class ViewActivity extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    }
-  }
-
-  componentDidMount() {
-    const { match: { params } } = this.props;
-
-  }
-
-  render () {
-    return (
-      <div className="viewActivityContainer">
-        Page Coming Soon
-        {/* <div className="title">Title: </div>
+const ViewActivity = (props) => {
+  let { activityId } = props.match.params;
+  return (
+    <div className='view-activity-container'>
+      <div className="title">Title: </div>
         <input required className="textInput" type="text" name="title"/>
         <div className="inputBlockContainer">
           <div className="sportContainer">
@@ -68,10 +57,9 @@ class ViewActivity extends React.Component {
         <div className="photoContainer">
             <div className="inputHeader">Photo/Map Url</div>
             <input className="textInput" type="text" name="photo"/>
-        </div> */}
-      </div>
-    );
-  }
-}
+        </div>
+    </div>
+  );
+};
 
 export default ViewActivity;

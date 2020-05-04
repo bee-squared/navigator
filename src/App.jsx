@@ -23,13 +23,11 @@ function App() {
           <Route exact path='/'>
             <Redirect to='/dashboard'/>
           </Route>
-          <Route exact path='/dashboard' component={ActivityStream} />
+          <Route path='/dashboard' component={ActivityStream} />
           <Route path='/profile' component={Profile} />
-          <Route path='/activity/new'>
-            <NewActivity/>
-          </Route>
-          <Route path='/activity' component={ViewActivity} />
-          <Route path='/activity/:activityId' component={ViewActivity} />
+          {/* <Route exact path='/activity' component={ViewActivity} /> */}
+          <Route exact path='/activity/new' component={NewActivity} />
+          <Route path='/activity/:activityId' children={ViewActivity} />
         </Switch>
         <footer></footer>
       </div>
