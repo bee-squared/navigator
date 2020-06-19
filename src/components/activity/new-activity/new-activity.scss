@@ -158,3 +158,46 @@
   height: 40vh;
 }
 
+
+// Mapbox
+.mapContainer {
+  height: 450px;
+  margin-bottom: 20px;
+}
+
+.marker {
+  position: relative;
+  background-image: url('../../../library/location.png');
+  background-size: cover;
+  width: 40px;
+  height: 41px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.mapboxgl-popup {
+  max-width: 200px;
+}
+
+.mapboxgl-popup-content {
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+}
+
+
+.sidebarStyle {
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 12px;
+  background-color: #404040;
+  color: #ffffff;
+  z-index: 1 !important;
+  padding: 6px;
+  font-weight: bold;
+  }
+
+  .mapboxgl-control-container {
+    display: none;
+  }

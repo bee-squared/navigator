@@ -10,7 +10,6 @@ import Navbar from './components/styled-components/navbar/navbar';
 import ActivityStream from './components/activity/activity-stream/activity-stream';
 import Profile from './components/profile/profile';
 import NewActivity from './components/activity/new-activity/new-activity';
-import ViewActivity from './components/activity/view-activity/view-activity';
 
 function App() {
   return (
