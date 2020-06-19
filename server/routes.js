@@ -10,7 +10,7 @@ router.get('/allActivities', function (req, res) {
    .then((results) => res.status(200).send(results));
 })
 
-router.get('/activity', function (req, res) {
+router.get('/viewActivity', function (req, res) {
     // .then((results) => res.status(200).send(results))
 })
 

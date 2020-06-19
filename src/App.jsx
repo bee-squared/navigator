@@ -26,8 +26,8 @@ function App() {
           <Route path='/dashboard' component={ActivityStream} />
           <Route path='/profile' component={Profile} />
           {/* <Route exact path='/activity' component={ViewActivity} /> */}
-          <Route exact path='/activity/new' component={NewActivity} />
-          <Route path='/activity/:activityId' children={ViewActivity} />
+          <Route exact path='/activity' component={NewActivity} />
+          <Route exact path='/activity/:activityId' component={NewActivity} />
         </Switch>
         <footer></footer>
       </div>
